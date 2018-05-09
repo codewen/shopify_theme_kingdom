@@ -1,0 +1,82 @@
+<div id="search-overlay" class="table-display">
+	<div>
+		<div class="simple-overlay-box">
+
+			<h5>{{ 'search.overlay.header_text' | t }}</h5>
+			{% include 'main_search' with 'primary' %}
+			<a href="#" class="close main">{% include 'asset_svg' with 'close_icon' %}</a>
+
+		</div>
+	</div>
+</div>
+
+{% if template contains 'product' %}
+
+	<div id="share-overlay" class="table-display">
+		<div>
+			<div class="simple-overlay-box">
+
+				<h5>{{ 'products.page.share_text' | t }}</h5>
+				{% include 'main_sharing' %}
+				<a href="#" class="close main">{% include 'asset_svg' with 'close_icon' %}</a>
+
+			</div>
+		</div>
+	</div>
+
+	{% if settings.cart_action == 'overlay' %}
+
+		<div id="cart-overlay" class="table-display">
+			<div>
+				<div class="simple-overlay-box">
+					
+					{% include 'asset_svg' with 'check_icon' %}
+					<a href="{{ shop.url }}/cart">{{ 'products.page.cart_actions_checkout' | t }}</a>
+					<hr />
+					<a href="#" onclick="$('#main-overlay').find('.close').trigger('click');return false;">{{ 'products.page.cart_actions_continue' | t }}</a>
+
+					<a href="#" class="close main">{% include 'asset_svg' with 'close_icon' %}</a>
+
+				</div>
+			</div>
+		</div>
+
+	{% endif %}
+
+{% endif %}
+
+{% if template contains 'article' and settings.blog_sharing_enabled %}
+
+	<div id="share-overlay" class="table-display">
+		<div>
+			<div class="simple-overlay-box">
+
+				<h5>{{ 'products.page.share_text' | t }}</h5>
+				{% include 'main_sharing' %}
+				<a href="#" class="close main">{% include 'asset_svg' with 'close_icon' %}</a>
+
+			</div>
+		</div>
+	</div>
+
+{% endif %}
+
+{% if collection.image %}
+	{% capture collection_image %} {{ collection | img_url: 'grande' }} {% endcapture %}
+{% else %}
+	{% capture collection_image %} {{ collection.products.first | img_url: 'grande' }} {% endcapture %}
+{% endif %}
+
+<div id="share-overlay" class="table-display">
+	<div>
+		<div class="simple-overlay-box">
+
+			<h5>{{ 'products.page.share_text' | t }}</h5>
+			{% include 'main_sharing' %}
+			<a href="#" class="close main">{% include 'asset_svg' with 'close_icon' %}</a>
+
+		</div>
+	</div>
+</div>
+
+{% section 'popup' %}

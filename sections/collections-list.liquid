@@ -1,0 +1,162 @@
+{% if section.settings.title != blank or section.settings.subtitle != blank %}
+
+  <div class="collections-list-title ">
+
+    {% unless section.settings.title == blank %}
+      <h3 class="title">{{ section.settings.title | escape }}</h3>
+    {% endunless %}
+
+    {% unless section.settings.subtitle == blank %}
+      <p class="subtitle">{{ section.settings.subtitle | escape }}</p>
+    {% endunless %}
+
+  </div>
+
+{% endif %}
+
+<div class="isotope-products home-content collections-list border-{{ section.settings.collections_border }} clearfix" data-section-id="{{ section.id }}" data-collections_border="{{section.settings.collections_border }}" data-collections_thumb_bg="{{ section.settings.collections_thumb_bg }}" data-blocks-size="{{ section.blocks.size }}">
+
+  {% if section.blocks.size > 0 %}
+
+    {% for block in section.blocks %}
+      
+      {% unless collections[block.settings.home_collections_select] == blank %}
+
+        {% include 'collections_item-variable' with collections[block.settings.home_collections_select] %}
+
+      {% else %}
+
+        <a href="#" class="grid-item {{ section.settings.collections_anim_style }} {{ section.settings.collections_thumb_style }}">
+
+        <span class="onboarding-svg relative" style="padding-top: 100%">
+          {% assign no = forloop.index | modulo:3 | plus:1 %}
+          {{ 'collection-X' | replace: 'X', no | placeholder_svg_tag }}
+        </span>
+
+          <div class="caption">
+            {% if section.settings.collections_anim_style == 'one' %}
+              <div class="top">
+                <h2>Featured Collection</h2>
+              </div>
+              <div class="bottom">
+                <span class="info">View Products &rarr;</span>
+              </div>
+            {% else %}
+              <div>
+                <div><h2>Featured collection</h2></div>
+              </div>
+            {% endif %}
+          </div>
+        </a>
+
+      {% endunless %}
+
+    {% endfor %}
+
+  {% endif %}
+
+  {% include 'asset_preloader' %}
+
+</div>
+
+{% schema %}
+  {
+    "name": "Collection list",
+    "class": "index-section featured-collections-section reload-isotope home-nomargin",
+    "max_blocks": 3,
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Collections list"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Caption",
+        "default": "A list of your most important collections"
+      },
+      {
+        "type": "select",
+        "id": "collections_border",
+        "label": "Image border",
+        "options": [
+          {
+            "value": "no",
+            "label": "No border"
+          },
+          {
+            "value": "true tiny",
+            "label": "Tiny"
+          },
+          {
+            "value": "true normal",
+            "label": "Normal"
+          },
+          {
+            "value": "true large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_anim_style",
+        "label": "Caption style",
+        "options": [
+          {
+            "value": "one",
+            "label": "Overlay left aligned"
+          },
+          {
+            "value": "three",
+            "label": "Overlay centered aligned"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_thumb_style",
+        "label": "Product text",
+        "options": [
+          {
+            "value": "light",
+            "label": "Dark"
+          },
+          {
+            "value": "dark",
+            "label": "Light"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "collections_thumb_bg",
+        "label": "Product hover",
+        "default": "#ffffff"
+      }
+    ],
+    "blocks": [{
+      "type": "collection",
+      "name": "Collection",
+      "settings": [{
+        "type": "collection",
+        "id": "home_collections_select",
+        "label": "Collection"
+      }]
+    }],
+    "presets": [{
+      "name": "Collection list",
+      "category": "Collection",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }]
+  }
+{% endschema %}

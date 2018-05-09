@@ -1,0 +1,92 @@
+{% for block in section.blocks %}
+  
+  {% assign parloop = forloop.index | modulo: 2 %}
+  {% if parloop == 0 %}
+    {% assign width = '50%' %}
+  {% else %}
+    {% if forloop.index == forloop.length %}
+      {% assign width = '100%' %}
+    {% else %}
+      {% assign width = '50%' %}
+    {% endif %}
+  {% endif %}
+
+  <div class="simple-image" style="width: {{ width }}">
+
+    {% unless block.settings.url == blank %}
+      <a href="{{ block.settings.url }}" target="{{ block.settings.target }}">
+    {% endunless %}
+      
+      {% if block.settings.image %}
+
+        <div class="lazyload-container" style="padding-top:{{ 100 | divided_by: block.settings.image.aspect_ratio }}%">
+          <img
+            src="{{ block.settings.image | img_url: '728x' }}" alt="{{ block.settings.image.alt }}"
+            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            data-srcset="{{ block.settings.image | img_url: '360x' }} 360w, {{ block.settings.image | img_url: '480x' }} 480w, {{ block.settings.image | img_url: '960x' }} 960w, {{ block.settings.image | img_url: '1440x' }} 1440w, {{ block.settings.image | img_url: '1920x' }} 1920w"
+            data-sizes="auto"
+            class="lazyload" 
+          />
+          <noscript><span class="ll-fallback" style="background-image:url({{ block.settings.image | img_url: '728x' }})"></span></noscript> 
+        </div>
+
+      {% else %}
+
+        {% assign no = forloop.index | modulo:2 | plus:1 %}
+        <span>{{ 'lifestyle-X' | replace: 'X', no | placeholder_svg_tag }}</span>
+
+      {% endif %}
+
+    {% unless block.settings.url == blank %}
+      </a>
+    {% endunless %}
+
+  </div>
+
+{% endfor %}
+
+{% schema %}
+  {
+    "name": "Gallery",
+    "class": "index-section featured-image-section home-nomargin clearfix",
+    "blocks": [{
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Link",
+          "info": "Optional"
+        },
+        {
+          "type": "select",
+          "id": "target",
+          "label": "Link target",
+          "options": [
+            {
+              "value": "_self",
+              "label": "Open in same page"
+            },
+            {
+              "value": "_blank",
+              "label": "Open in new page"
+            }
+          ]
+        }
+      ]
+    }],
+    "presets": [{
+      "name": "Gallery",
+      "category": "Image",
+      "blocks": [{
+        "type": "image"
+      }]
+    }]
+  }
+{% endschema %}

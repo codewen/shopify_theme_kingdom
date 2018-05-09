@@ -1,0 +1,1102 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Kingdom",
+    "theme_author": "KrownThemes",
+    "theme_version": "2.3.3",
+    "theme_documentation_url": "http:\/\/shopify-support.krownthemes.com\/",
+    "theme_support_email": "shopify_support@krownthemes.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Sidebar"
+      },
+      {
+        "type": "color",
+        "id": "sidebar_bg",
+        "label": "Background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "logo_color",
+        "label": "Text logo color",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "menus_1",
+        "label": "Secondary navigation",
+        "default": "#1d1d1d"
+      },
+      {
+        "type": "color",
+        "id": "menus_3",
+        "label": "Main navigation",
+        "default": "#9e9e9e"
+      },
+      {
+        "type": "color",
+        "id": "menus_5",
+        "label": "Any menu when rolled over",
+        "default": "#9d8347"
+      },
+      {
+        "type": "color",
+        "id": "menus_6",
+        "label": "Any menu when selected",
+        "default": "#1d1d1d"
+      },
+      {
+        "type": "color",
+        "id": "sidebar_text",
+        "label": "Text and Icons",
+        "default": "#7d7d7d"
+      },
+      {
+        "type": "color",
+        "id": "sidebar_links",
+        "label": "Links",
+        "default": "#9d8347"
+      },
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "page_bg",
+        "label": "Background",
+        "default": "#f9f9f9"
+      },
+      {
+        "type": "color",
+        "id": "type_headings",
+        "label": "Headings",
+        "default": "#1d1d1d"
+      },
+      {
+        "type": "color",
+        "id": "type_body",
+        "label": "Regular text",
+        "default": "#7d7d7d"
+      },
+      {
+        "type": "color",
+        "id": "type_additional",
+        "label": "Additional text",
+        "default": "#9d9d9d"
+      },
+      {
+        "type": "color",
+        "id": "type_links",
+        "label": "Links",
+        "default": "#9d8347"
+      },
+      {
+        "type": "header",
+        "content": "Forms"
+      },
+      {
+        "type": "color",
+        "id": "form_back",
+        "label": "Inputs background",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "form_border",
+        "label": "Inputs border",
+        "default": "#ffffff"
+      },
+      {
+        "type": "select",
+        "id": "form_style",
+        "label": "Inputs style",
+        "options": [
+          {
+            "value": "6px",
+            "label": "Rounded"
+          },
+          {
+            "value": "0",
+            "label": "Square"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "form_label",
+        "label": "Inputs label",
+        "default": "#7f7f7f"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Primary buttons",
+        "default": "#b89955"
+      },
+      {
+        "type": "color",
+        "id": "button_dark",
+        "label": "Secondary buttons",
+        "default": "#1d1d1d"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "select",
+        "id": "typography_headings",
+        "label": "Headings",
+        "options": [
+          {
+            "value": "Helvetica,Arial, sans-serif\/*regular*\/",
+            "label": "Helvetica, Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Tahoma,Geneva, sans-serif\/*regular*\/",
+            "label": "Tahoma, Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Dosis, sans-serif",
+            "label": "Dosis",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Inconsolata, sans-serif",
+            "label": "Inconsolata",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Montserrat, sans-serif",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Merriweather Sans', sans-serif",
+            "label": "Merriweather Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Raleway, sans-serif",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Quicksand, sans-serif",
+            "label": "Quicksand",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Roboto, sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Condensed', sans-serif",
+            "label": "Roboto Condensed",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Cambria,Georgia, serif\/*regular*\/",
+            "label": "Cambria, Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond,'Hoefler Text', serif\/*regular*\/",
+            "label": "Garamond, Hoefler Text",
+            "group": "Serif"
+          },
+          {
+            "value": "Arvo, serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Libre Baskerville', serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Lora, serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Noto Serif', serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Sanchez, serif",
+            "label": "Sanchez",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Life Savers', cursive",
+            "label": "Life Savers",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Patrick Hand SC', cursive",
+            "label": "Patrick Hand SC",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Reenie Beanie', cursive",
+            "label": "Reenie Beanie",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "Sacramento, cursive",
+            "label": "Sacramento",
+            "group": "Cursive | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "typography_menus",
+        "label": "Menus",
+        "options": [
+          {
+            "value": "Helvetica,Arial, sans-serif\/*regular*\/",
+            "label": "Helvetica, Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Tahoma,Geneva, sans-serif\/*regular*\/",
+            "label": "Tahoma, Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Dosis, sans-serif",
+            "label": "Dosis",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Inconsolata, sans-serif",
+            "label": "Inconsolata",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Montserrat, sans-serif",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Merriweather Sans', sans-serif",
+            "label": "Merriweather Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Raleway, sans-serif",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Quicksand, sans-serif",
+            "label": "Quicksand",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Roboto, sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Condensed', sans-serif",
+            "label": "Roboto Condensed",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Cambria,Georgia, serif\/*regular*\/",
+            "label": "Cambria, Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond,'Hoefler Text', serif\/*regular*\/",
+            "label": "Garamond, Hoefler Text",
+            "group": "Serif"
+          },
+          {
+            "value": "Arvo, serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Libre Baskerville', serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Lora, serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Noto Serif', serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Sanchez, serif",
+            "label": "Sanchez",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Life Savers', cursive",
+            "label": "Life Savers",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Patrick Hand SC', cursive",
+            "label": "Patrick Hand SC",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Reenie Beanie', cursive",
+            "label": "Reenie Beanie",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "Sacramento, cursive",
+            "label": "Sacramento",
+            "group": "Cursive | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "typography_body",
+        "label": "Body",
+        "options": [
+          {
+            "value": "Helvetica,Arial, sans-serif\/*regular*\/",
+            "label": "Helvetica, Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Tahoma,Geneva, sans-serif\/*regular*\/",
+            "label": "Tahoma, Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Dosis, sans-serif",
+            "label": "Dosis",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Inconsolata, sans-serif",
+            "label": "Inconsolata",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Montserrat, sans-serif",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Merriweather Sans', sans-serif",
+            "label": "Merriweather Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Raleway, sans-serif",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Quicksand, sans-serif",
+            "label": "Quicksand",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Roboto, sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Condensed', sans-serif",
+            "label": "Roboto Condensed",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Cambria,Georgia, serif\/*regular*\/",
+            "label": "Cambria, Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond,'Hoefler Text', serif\/*regular*\/",
+            "label": "Garamond, Hoefler Text",
+            "group": "Serif"
+          },
+          {
+            "value": "Arvo, serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Libre Baskerville', serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Lora, serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Noto Serif', serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Sanchez, serif",
+            "label": "Sanchez",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Life Savers', cursive",
+            "label": "Life Savers",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Patrick Hand SC', cursive",
+            "label": "Patrick Hand SC",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Reenie Beanie', cursive",
+            "label": "Reenie Beanie",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "Sacramento, cursive",
+            "label": "Sacramento",
+            "group": "Cursive | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Slideshow heading"
+      },
+      {
+        "type": "select",
+        "id": "typography_label1",
+        "label": "Font",
+        "options": [
+          {
+            "value": "Helvetica,Arial, sans-serif\/*regular*\/",
+            "label": "Helvetica, Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Tahoma,Geneva, sans-serif\/*regular*\/",
+            "label": "Tahoma, Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Dosis, sans-serif",
+            "label": "Dosis",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Inconsolata, sans-serif",
+            "label": "Inconsolata",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Montserrat, sans-serif",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Merriweather Sans', sans-serif",
+            "label": "Merriweather Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Raleway, sans-serif",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Quicksand, sans-serif",
+            "label": "Quicksand",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Roboto, sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Condensed', sans-serif",
+            "label": "Roboto Condensed",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Cambria,Georgia, serif\/*regular*\/",
+            "label": "Cambria, Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond,'Hoefler Text', serif\/*regular*\/",
+            "label": "Garamond, Hoefler Text",
+            "group": "Serif"
+          },
+          {
+            "value": "Arvo, serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Libre Baskerville', serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Lora, serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Noto Serif', serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Sanchez, serif",
+            "label": "Sanchez",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Life Savers', cursive",
+            "label": "Life Savers",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Patrick Hand SC', cursive",
+            "label": "Patrick Hand SC",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Reenie Beanie', cursive",
+            "label": "Reenie Beanie",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "Sacramento, cursive",
+            "label": "Sacramento",
+            "group": "Cursive | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "typography_label1_style",
+        "label": "Style",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "italic",
+            "label": "Italic"
+          },
+          {
+            "value": "bold",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "typography_label1_size",
+        "label": "Base size",
+        "min": 12,
+        "max": 96,
+        "step": 2,
+        "unit": "px",
+        "default": 18
+      },
+      {
+        "type": "header",
+        "content": "Slideshow subheading"
+      },
+      {
+        "type": "select",
+        "id": "typography_label2",
+        "label": "Font",
+        "options": [
+          {
+            "value": "Helvetica,Arial, sans-serif\/*regular*\/",
+            "label": "Helvetica, Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Tahoma,Geneva, sans-serif\/*regular*\/",
+            "label": "Tahoma, Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Dosis, sans-serif",
+            "label": "Dosis",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Inconsolata, sans-serif",
+            "label": "Inconsolata",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Montserrat, sans-serif",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Merriweather Sans', sans-serif",
+            "label": "Merriweather Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Raleway, sans-serif",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Quicksand, sans-serif",
+            "label": "Quicksand",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Roboto, sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Condensed', sans-serif",
+            "label": "Roboto Condensed",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Cambria,Georgia, serif\/*regular*\/",
+            "label": "Cambria, Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond,'Hoefler Text', serif\/*regular*\/",
+            "label": "Garamond, Hoefler Text",
+            "group": "Serif"
+          },
+          {
+            "value": "Arvo, serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Libre Baskerville', serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Lora, serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Noto Serif', serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Sanchez, serif",
+            "label": "Sanchez",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Life Savers', cursive",
+            "label": "Life Savers",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Patrick Hand SC', cursive",
+            "label": "Patrick Hand SC",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Reenie Beanie', cursive",
+            "label": "Reenie Beanie",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "Sacramento, cursive",
+            "label": "Sacramento",
+            "group": "Cursive | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "typography_label2_style",
+        "label": "Style",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "italic",
+            "label": "Italic"
+          },
+          {
+            "value": "bold",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "typography_label2_size",
+        "label": "Base size",
+        "min": 12,
+        "max": 96,
+        "step": 2,
+        "unit": "px",
+        "default": 24
+      },
+      {
+        "type": "header",
+        "content": "Slideshow caption"
+      },
+      {
+        "type": "select",
+        "id": "typography_label3",
+        "label": "Font",
+        "options": [
+          {
+            "value": "Helvetica,Arial, sans-serif\/*regular*\/",
+            "label": "Helvetica, Arial",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Tahoma,Geneva, sans-serif\/*regular*\/",
+            "label": "Tahoma, Geneva",
+            "group": "Sans-serif"
+          },
+          {
+            "value": "Dosis, sans-serif",
+            "label": "Dosis",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Inconsolata, sans-serif",
+            "label": "Inconsolata",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Montserrat, sans-serif",
+            "label": "Montserrat",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Merriweather Sans', sans-serif",
+            "label": "Merriweather Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Open Sans', sans-serif",
+            "label": "Open Sans",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Raleway, sans-serif",
+            "label": "Raleway",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Quicksand, sans-serif",
+            "label": "Quicksand",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Roboto, sans-serif",
+            "label": "Roboto",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Condensed', sans-serif",
+            "label": "Roboto Condensed",
+            "group": "Sans-serif | Google Web Fonts"
+          },
+          {
+            "value": "Cambria,Georgia, serif\/*regular*\/",
+            "label": "Cambria, Georgia",
+            "group": "Serif"
+          },
+          {
+            "value": "Garamond,'Hoefler Text', serif\/*regular*\/",
+            "label": "Garamond, Hoefler Text",
+            "group": "Serif"
+          },
+          {
+            "value": "Arvo, serif",
+            "label": "Arvo",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Libre Baskerville', serif",
+            "label": "Libre Baskerville",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Lora, serif",
+            "label": "Lora",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Noto Serif', serif",
+            "label": "Noto Serif",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Roboto Slab', serif",
+            "label": "Roboto Slab",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "Sanchez, serif",
+            "label": "Sanchez",
+            "group": "Serif | Google Web Fonts"
+          },
+          {
+            "value": "'Life Savers', cursive",
+            "label": "Life Savers",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Patrick Hand SC', cursive",
+            "label": "Patrick Hand SC",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "'Reenie Beanie', cursive",
+            "label": "Reenie Beanie",
+            "group": "Cursive | Google Web Fonts"
+          },
+          {
+            "value": "Sacramento, cursive",
+            "label": "Sacramento",
+            "group": "Cursive | Google Web Fonts"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "typography_label3_style",
+        "label": "Style",
+        "options": [
+          {
+            "value": "normal",
+            "label": "Normal"
+          },
+          {
+            "value": "italic",
+            "label": "Italic"
+          },
+          {
+            "value": "bold",
+            "label": "Bold"
+          }
+        ]
+      },
+      {
+        "type": "range",
+        "id": "typography_label3_size",
+        "label": "Base size",
+        "min": 12,
+        "max": 96,
+        "step": 2,
+        "unit": "px",
+        "default": 14
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "32 x 32px .png required"
+      }
+    ]
+  },
+  {
+    "name": "Cart page",
+    "settings": [
+      {
+        "type": "select",
+        "id": "cart_action",
+        "label": "Cart type",
+        "options": [
+          {
+            "value": "no-overlay",
+            "label": "Page"
+          },
+          {
+            "value": "overlay",
+            "label": "Modal"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "cart_notes_enable",
+        "label": "Enable cart notes"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social media icons",
+        "info": "Paste the full URL's to the desired social networks. Empty fields will simply not appear."
+      },
+      {
+        "type": "text",
+        "id": "social_twitter",
+        "label": "Twitter",
+        "info": "https:\/\/twitter.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook",
+        "info": "https:\/\/www.facebook.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_google",
+        "label": "Google+",
+        "info": "https:\/\/plus.google.com\/+shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube",
+        "info": "https:\/\/www.youtube.com\/user\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_vimeo",
+        "label": "Vimeo",
+        "info": "https:\/\/vimeo.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_pinterest",
+        "label": "Pinterest",
+        "info": "https:\/\/www.pinterest.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_tumblr",
+        "label": "Tumblr",
+        "info": "http:\/\/shopify.tumblr.com"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram",
+        "info": "https:\/\/instagram.com\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_linkedin",
+        "label": "LinkedIn",
+        "info": "https:\/\/www.linkedin.com\/company\/shopify"
+      },
+      {
+        "type": "text",
+        "id": "social_flickr",
+        "label": "Flickr",
+        "info": "https:\/\/www.flickr.com\/photos\/shopify\/"
+      },
+      {
+        "type": "text",
+        "id": "social_email",
+        "label": "Email",
+        "info": "mailto:contact@shopify.com"
+      }
+    ]
+  }
+]

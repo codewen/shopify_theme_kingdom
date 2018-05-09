@@ -1,0 +1,23 @@
+<a href="#" class="grid-item {{ section.settings.collections_anim_style }} {{ section.settings.collections_thumb_style }}">
+
+  <span class="grid-item-image onboarding-svg" style="padding-top: 100%">
+    {% assign no = forloop.index | modulo:6 | plus:1 %}
+    {{ 'product-X' | replace: 'X', no | placeholder_svg_tag }}
+  </span>
+
+  <div class="caption">
+
+	{% if section.settings.collections_anim_style == 'one' %}
+		<div class="top"><h2>Dummy product title</h2></div>
+		<div class="bottom"><strong>{{ '99' | money }}</strong></div>
+	{% elsif section.settings.collections_anim_style == 'two' %}
+	  <div><h2>Dummy product title</h2><div class="price"><strong>{{ '99' | money }}</strong></div></div>
+	{% elsif section.settings.collections_anim_style == 'three' %}
+		<div><div><h2>Dummy product title</h2><div class="price"><strong>{{ '99' | money }}</strong></div></div></div>
+  {% elsif section.settings.collections_anim_style == 'four' %}
+    <div class="meta"><h2>Dummy product title</h2></div><div class="price"><strong>{{ '99'| money }}</strong></div>
+	{% endif %}
+
+	</div>
+
+</a>

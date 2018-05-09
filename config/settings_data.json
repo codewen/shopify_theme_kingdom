@@ -1,0 +1,1120 @@
+{
+  "current": {
+    "sidebar_bg": "#ffffff",
+    "logo_color": "#1b1b1b",
+    "menus_1": "#1d1d1d",
+    "menus_3": "#818181",
+    "menus_5": "#9d8347",
+    "menus_6": "#1d1d1d",
+    "sidebar_text": "#7d7d7d",
+    "sidebar_links": "#9d8347",
+    "page_bg": "#f9f9f9",
+    "type_headings": "#1d1d1d",
+    "type_body": "#7d7d7d",
+    "type_additional": "#ababab",
+    "type_links": "#9d8347",
+    "form_back": "#ffffff",
+    "form_border": "#ffffff",
+    "form_style": "6px",
+    "form_label": "#7f7f7f",
+    "button_color": "#9d8347",
+    "button_dark": "#1d1d1d",
+    "typography_headings": "Montserrat, sans-serif",
+    "typography_menus": "Montserrat, sans-serif",
+    "typography_body": "Raleway, sans-serif",
+    "typography_label1": "Arvo, serif",
+    "typography_label1_style": "bold",
+    "typography_label1_size": 18,
+    "typography_label2": "Montserrat, sans-serif",
+    "typography_label2_style": "bold",
+    "typography_label2_size": 24,
+    "typography_label3": "Montserrat, sans-serif",
+    "typography_label3_style": "normal",
+    "typography_label3_size": 14,
+    "favicon": "",
+    "cart_action": "overlay",
+    "cart_notes_enable": true,
+    "social_twitter": "",
+    "social_facebook": "",
+    "social_google": "",
+    "social_youtube": "",
+    "social_vimeo": "",
+    "social_pinterest": "",
+    "social_tumblr": "",
+    "social_instagram": "https:\/\/www.instagram.com\/pastoraleflower\/",
+    "social_linkedin": "",
+    "social_flickr": "",
+    "social_email": "info@pastoraleflower.com.au",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#2a9dcc",
+    "checkout_button_color": "#2a9dcc",
+    "checkout_error_color": "#ff6d6d",
+    "logo_type": "text",
+    "search_products": false,
+    "checkout_use_header_image": false,
+    "checkout_banner_background_color": "#ffffff",
+    "checkout_logo": "",
+    "checkout_call_to_action_color": "#8fc243",
+    "sections": {
+      "sidebar": {
+        "type": "sidebar",
+        "settings": {
+          "logo_src": "shopify:\/\/shop_images\/logo.png",
+          "logo_width": "180",
+          "menu_main_select": "main-menu",
+          "menu_collections_select": "",
+          "newsletter_sidebar": true,
+          "newsletter_sidebar_text": "Newsletter",
+          "footer_link_list": "",
+          "show_payment": false
+        }
+      },
+      "product-page": {
+        "type": "product-page",
+        "settings": {
+          "breadcrumb_enabled": true,
+          "product_vendor_enabled": false,
+          "truncated_description": true,
+          "truncated_description_lines_range": 5,
+          "quantity_selector": true,
+          "hide_variants": false,
+          "enable_payment_button": false,
+          "gallery_resizing": "fit-both",
+          "gallery_featured_image": true,
+          "gallery_transition": "slide",
+          "gallery_autoplay": true,
+          "gallery_timer": 6,
+          "gallery_zoom": true,
+          "gallery_background_color": "#f9f9f9"
+        }
+      },
+      "password-sharing": {
+        "type": "password-sharing",
+        "settings": {
+          "password_sharing_enabled": true
+        }
+      },
+      "popup": {
+        "type": "popup",
+        "settings": {
+          "bg": "",
+          "title": "Our Newsletter",
+          "content": "<p>Stay up to date on the latest product releases, special offers &amp; news by signing up for our newsletter.<\/p>",
+          "newsletter_enable": true,
+          "newsletter_auto": 30,
+          "newsletter_frequent": "day"
+        }
+      },
+      "slideshow": {
+        "type": "slideshow",
+        "blocks": {
+          "1525410929059": {
+            "type": "slide",
+            "settings": {
+              "hero_slide": "shopify:\/\/shop_images\/IMG_5452.JPG",
+              "hero_video": "",
+              "label1": "",
+              "label2": "MOTHER'S DAY GIFT",
+              "label3": "",
+              "button_label": "Shop Now",
+              "button_url": "https:\/\/pastoraleflower.com.au\/products\/2018-deluxe-mothers-day-bouquet",
+              "img_style": "dark",
+              "labels_pos": "center"
+            }
+          },
+          "1525411236592": {
+            "type": "slide",
+            "settings": {
+              "hero_slide": "shopify:\/\/shop_images\/P4212927.jpg",
+              "hero_video": "",
+              "label1": "",
+              "label2": "DAILY FLOWRS",
+              "label3": "Browse our online shop to find the perfect wrapped flowers to gift or treat yourselves.",
+              "button_label": "SHOP NOW",
+              "button_url": "https:\/\/pastoraleflower.com.au\/collections\/daily-flowers",
+              "img_style": "light",
+              "labels_pos": "left"
+            }
+          },
+          "1484211369679": {
+            "type": "slide",
+            "settings": {
+              "hero_slide": "shopify:\/\/shop_images\/IMG_4021.jpg",
+              "hero_video": "",
+              "label1": "",
+              "label2": "BIG DAY!",
+              "label3": "Mix our wedding & Event products to create your dream wedding.",
+              "button_label": "Tailor your wedding",
+              "button_url": "https:\/\/pastoraleflower.com.au\/collections\/wedding-event",
+              "img_style": "light",
+              "labels_pos": "right"
+            }
+          },
+          "1525411435991": {
+            "type": "slide",
+            "settings": {
+              "hero_slide": "shopify:\/\/shop_images\/P4152872.jpg",
+              "hero_video": "",
+              "label1": "",
+              "label2": "HOME DECOR",
+              "label3": "Decorate your home with our floral design.",
+              "button_label": "",
+              "button_url": "",
+              "img_style": "light",
+              "labels_pos": "left"
+            }
+          }
+        },
+        "block_order": [
+          "1525410929059",
+          "1525411236592",
+          "1484211369679",
+          "1525411435991"
+        ],
+        "settings": {
+          "carousel_transition": "slide",
+          "carousel_autoplay": true,
+          "carousel_timer": 8
+        }
+      },
+      "collection-page": {
+        "type": "collection-page",
+        "settings": {
+          "collection_show_description": false,
+          "collection_pages": 12,
+          "collection_title_enabled": true,
+          "collection_filtering_enabled": false,
+          "collection_filtering_type": "by-tags",
+          "collection_sorting_enabled": false,
+          "collection_sharing_enabled": true,
+          "collections_border": "true tiny",
+          "collections_anim_style": "two",
+          "collections_thumb_style": "light",
+          "collections_thumb_bg": "#ffffff",
+          "product_show_secondary": true
+        }
+      },
+      "blog-page": {
+        "type": "blog-page",
+        "settings": {
+          "blog_cols_range": 2,
+          "tags_filter": true,
+          "tags_enabled": true,
+          "author_enabled": true,
+          "rss_icon": true,
+          "blog_excerpt": "30"
+        }
+      },
+      "article-page": {
+        "type": "article-page",
+        "settings": {
+          "tags_enabled": true,
+          "author_enabled": true,
+          "rss_icon": true,
+          "blog_sharing_enabled": true
+        }
+      },
+      "1484213980467": {
+        "type": "rich-text",
+        "blocks": {
+          "example-text-block": {
+            "type": "text",
+            "settings": {
+              "content": "<p>Pastorale Flower is&nbsp;currently a home studio based in Sydney. We specialise in creating stylish arrangements, combining lush colours and fun textures to make every arrangement something memorable.<\/p>\n<p>We like to be the part of your special day. We wish to introduce the beauty of the flowers and deliver your love to the loved ones.<\/p>"
+            }
+          }
+        },
+        "block_order": [
+          "example-text-block"
+        ],
+        "settings": {
+          "title": "FLOWER TALKS"
+        }
+      },
+      "announcement": {
+        "type": "announcement",
+        "settings": {
+          "ann_show": false,
+          "ann_text": "Mother's day gift",
+          "ann_link": ""
+        }
+      },
+      "product-related": {
+        "type": "product-related",
+        "settings": {
+          "related_enable": true,
+          "related_max": 2,
+          "collections_size": "small",
+          "collections_border": "true tiny",
+          "collections_anim_style": "three",
+          "collections_thumb_style": "light",
+          "collections_thumb_bg": "#ffffff",
+          "product_show_secondary": false
+        }
+      },
+      "list-collections": {
+        "type": "list-collections",
+        "settings": {
+          "collections_size": "small",
+          "collections_border": "no",
+          "collections_anim_style": "three",
+          "collections_thumb_style": "light",
+          "collections_thumb_bg": "#ffffff"
+        }
+      },
+      "1525617704876": {
+        "type": "featured-products",
+        "disabled": true,
+        "settings": {
+          "collections_size": "small",
+          "collections_border": "no",
+          "collections_anim_style": "three",
+          "collections_thumb_style": "light",
+          "collections_thumb_bg": "#ffffff",
+          "product_show_secondary": true,
+          "home_list_products_max": 12,
+          "home_collections_select": "rose"
+        }
+      },
+      "1525747554771": {
+        "type": "collections-list",
+        "blocks": {
+          "1525747554771-0": {
+            "type": "collection",
+            "settings": {
+              "home_collections_select": "new"
+            }
+          },
+          "1525747554771-1": {
+            "type": "collection",
+            "settings": {
+              "home_collections_select": "rose"
+            }
+          },
+          "1525747599346": {
+            "type": "collection",
+            "settings": {
+              "home_collections_select": "wedding-event"
+            }
+          }
+        },
+        "block_order": [
+          "1525747554771-0",
+          "1525747554771-1",
+          "1525747599346"
+        ],
+        "settings": {
+          "title": "",
+          "subtitle": "",
+          "collections_border": "no",
+          "collections_anim_style": "three",
+          "collections_thumb_style": "light",
+          "collections_thumb_bg": "#ffffff"
+        }
+      }
+    },
+    "content_for_index": [
+      "1484213980467",
+      "1525747554771",
+      "1525617704876"
+    ]
+  },
+  "presets": {
+    "King": {
+      "sidebar_bg": "#ffffff",
+      "logo_color": "#1b1b1b",
+      "menus_1": "#1d1d1d",
+      "menus_3": "#818181",
+      "menus_5": "#9d8347",
+      "menus_6": "#1d1d1d",
+      "sidebar_text": "#7d7d7d",
+      "sidebar_links": "#9d8347",
+      "page_bg": "#f9f9f9",
+      "type_headings": "#1d1d1d",
+      "type_body": "#7d7d7d",
+      "type_additional": "#ababab",
+      "type_links": "#9d8347",
+      "form_back": "#ffffff",
+      "form_border": "#ffffff",
+      "form_style": "6px",
+      "form_label": "#7f7f7f",
+      "button_color": "#9d8347",
+      "button_dark": "#1d1d1d",
+      "typography_headings": "Montserrat, sans-serif",
+      "typography_menus": "Montserrat, sans-serif",
+      "typography_body": "Raleway, sans-serif",
+      "typography_label1": "Arvo, serif",
+      "typography_label1_style": "bold",
+      "typography_label1_size": "18",
+      "typography_label2": "Montserrat, sans-serif",
+      "typography_label2_style": "bold",
+      "typography_label2_size": "24",
+      "typography_label3": "Montserrat, sans-serif",
+      "typography_label3_style": "normal",
+      "typography_label3_size": "14",
+      "favicon": "",
+      "cart_action": "overlay",
+      "cart_notes_enable": true,
+      "social_twitter": "",
+      "social_facebook": "",
+      "social_google": "",
+      "social_youtube": "",
+      "social_vimeo": "",
+      "social_pinterest": "",
+      "social_tumblr": "",
+      "social_instagram": "",
+      "social_linkedin": "",
+      "social_flickr": "",
+      "social_email": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#2a9dcc",
+      "checkout_button_color": "#2a9dcc",
+      "checkout_error_color": "#ff6d6d",
+      "logo_type": "text",
+      "search_products": false,
+      "checkout_use_header_image": false,
+      "checkout_banner_background_color": "#ffffff",
+      "checkout_logo": "",
+      "checkout_call_to_action_color": "#8fc243",
+      "sections": {
+        "sidebar": {
+          "type": "sidebar",
+          "settings": {
+            "logo_src": "",
+            "logo_width": "200",
+            "menu_main_select": "main-menu",
+            "menu_collections_select": "collections-parent",
+            "newsletter_sidebar": true,
+            "newsletter_sidebar_text": "Newsletter",
+            "footer_link_list": "",
+            "show_payment": false
+          }
+        },
+        "product-page": {
+          "type": "product-page",
+          "settings": {
+            "breadcrumb_enabled": true,
+            "product_vendor_enabled": true,
+            "truncated_description": true,
+            "truncated_description_lines_range": 5,
+            "quantity_selector": true,
+            "gallery_resizing": "fill",
+            "gallery_featured_image": false,
+            "gallery_transition": "slide",
+            "gallery_autoplay": true,
+            "gallery_timer": 6,
+            "gallery_zoom": false,
+            "gallery_background_color": "#f4f4f4"
+          }
+        },
+        "password-sharing": {
+          "type": "password-sharing",
+          "settings": {
+            "password_sharing_enabled": true
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "bg": "",
+            "title": "Our Newsletter",
+            "content": "<p>Stay up to date on the latest product releases, special offers &amp; news by signing up for our newsletter.<\/p>",
+            "newsletter_auto": 30
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "1484211369679": {
+              "type": "slide",
+              "settings": {
+                "hero_slide": "",
+                "hero_video": "",
+                "label1": "An Introductory Heading",
+                "label2": "Product real subheading",
+                "label3": "Short Explanatory Caption",
+                "button_label": "More",
+                "button_url": "",
+                "img_style": "light",
+                "labels_pos": "left"
+              }
+            },
+            "1484211385979": {
+              "type": "slide",
+              "settings": {
+                "hero_slide": "",
+                "hero_video": "",
+                "label1": "An Different Heading",
+                "label2": "Product Real Subheading",
+                "label3": "Longer Explanatory Caption",
+                "button_label": "More",
+                "button_url": "",
+                "img_style": "light",
+                "labels_pos": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1484211369679",
+            "1484211385979"
+          ],
+          "settings": {
+            "carousel_transition": "slide",
+            "carousel_autoplay": true,
+            "carousel_timer": 7
+          }
+        },
+        "collection-page": {
+          "type": "collection-page",
+          "settings": {
+            "collection_show_description": false,
+            "collection_pages": 12,
+            "collection_title_enabled": true,
+            "collection_filtering_enabled": true,
+            "collection_filtering_type": "by-tags",
+            "collection_sorting_enabled": true,
+            "collection_sharing_enabled": true,
+            "collections_border": "no",
+            "collections_anim_style": "three",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff"
+          }
+        },
+        "1484211598002": {
+          "type": "featured-products",
+          "settings": {
+            "collections_size": "small",
+            "collections_border": "no",
+            "collections_anim_style": "one",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff",
+            "home_list_products_max": 6,
+            "home_collections_select": ""
+          }
+        },
+        "blog-page": {
+          "type": "blog-page",
+          "settings": {
+            "blog_cols_range": 2,
+            "tags_filter": true,
+            "tags_enabled": true,
+            "author_enabled": true,
+            "rss_icon": true,
+            "blog_excerpt": "30"
+          }
+        },
+        "article-page": {
+          "type": "article-page",
+          "settings": {
+            "tags_enabled": true,
+            "author_enabled": true,
+            "rss_icon": true,
+            "blog_sharing_enabled": true
+          }
+        },
+        "1484213955784": {
+          "type": "collections-list",
+          "blocks": {
+            "1484213961776": {
+              "type": "collection",
+              "settings": {
+                "home_collections_select": ""
+              }
+            },
+            "1484213963329": {
+              "type": "collection",
+              "settings": {
+                "home_collections_select": ""
+              }
+            }
+          },
+          "block_order": [
+            "1484213961776",
+            "1484213963329"
+          ],
+          "settings": {
+            "collections_border": "no",
+            "collections_anim_style": "one",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff"
+          }
+        },
+        "1484213980467": {
+          "type": "rich-text",
+          "blocks": {
+            "example-text-block": {
+              "type": "text",
+              "settings": {
+                "content": "<p>Use this area to insert a tagline or some kind of call to action for your users!<\/p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\r\n<p><strong>Endless possibilities!<\/strong><\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "example-text-block"
+          ],
+          "settings": {}
+        },
+        "1484214054017": {
+          "type": "featured-blog",
+          "settings": {
+            "blog_cols_range": 2,
+            "tags_enabled": false,
+            "author_enabled": false,
+            "blog_excerpt": "30",
+            "home_blog_select": ""
+          }
+        }
+      },
+      "content_for_index": [
+        "1484213955784",
+        "1484211598002",
+        "1484213980467",
+        "1484214054017"
+      ]
+    },
+    "Queen": {
+      "sidebar_bg": "#1d1d1d",
+      "logo_color": "#ffffff",
+      "menus_1": "#b8b8b8",
+      "menus_3": "#717171",
+      "menus_5": "#b89955",
+      "menus_6": "#dfdfdf",
+      "sidebar_text": "#7d7d7d",
+      "sidebar_links": "#9d8347",
+      "page_bg": "#f9f9f9",
+      "type_headings": "#1d1d1d",
+      "type_body": "#7f7f7f",
+      "type_additional": "#9d9d9d",
+      "type_links": "#9d8347",
+      "form_back": "#ffffff",
+      "form_border": "#ffffff",
+      "form_style": "0",
+      "form_label": "#7f7f7f",
+      "button_color": "#b89955",
+      "button_dark": "#1d1d1d",
+      "typography_headings": "Montserrat, sans-serif",
+      "typography_menus": "Montserrat, sans-serif",
+      "typography_body": "Raleway, sans-serif",
+      "typography_label1": "Arvo, serif",
+      "typography_label1_style": "italic",
+      "typography_label1_size": "12",
+      "typography_label2": "Montserrat, sans-serif",
+      "typography_label2_style": "normal",
+      "typography_label2_size": "32",
+      "typography_label3": "Helvetica,Arial, sans-serif\/*regular*\/",
+      "typography_label3_style": "normal",
+      "typography_label3_size": "14",
+      "favicon": "",
+      "cart_action": "overlay",
+      "cart_notes_enable": true,
+      "social_twitter": "",
+      "social_facebook": "",
+      "social_google": "",
+      "social_youtube": "",
+      "social_vimeo": "",
+      "social_pinterest": "",
+      "social_tumblr": "",
+      "social_instagram": "",
+      "social_linkedin": "",
+      "social_flickr": "",
+      "social_email": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#2a9dcc",
+      "checkout_button_color": "#2a9dcc",
+      "checkout_error_color": "#ff6d6d",
+      "logo_type": "text",
+      "search_products": false,
+      "checkout_use_header_image": false,
+      "checkout_banner_background_color": "#ffffff",
+      "checkout_logo": "",
+      "checkout_call_to_action_color": "#8fc243",
+      "sections": {
+        "sidebar": {
+          "type": "sidebar",
+          "settings": {
+            "logo_src": "",
+            "logo_width": "200",
+            "menu_main_select": "main-menu",
+            "menu_collections_select": "collections-parent",
+            "newsletter_sidebar": true,
+            "newsletter_sidebar_text": "Newsletter",
+            "footer_link_list": "",
+            "show_payment": false
+          }
+        },
+        "product-page": {
+          "type": "product-page",
+          "settings": {
+            "breadcrumb_enabled": true,
+            "product_vendor_enabled": true,
+            "truncated_description": true,
+            "truncated_description_lines_range": 5,
+            "quantity_selector": true,
+            "gallery_resizing": "fill",
+            "gallery_featured_image": false,
+            "gallery_transition": "slide",
+            "gallery_autoplay": true,
+            "gallery_timer": 6,
+            "gallery_zoom": false,
+            "gallery_background_color": "#f4f4f4"
+          }
+        },
+        "password-sharing": {
+          "type": "password-sharing",
+          "settings": {
+            "password_sharing_enabled": true
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "bg": "",
+            "title": "Our Newsletter",
+            "content": "<p>Stay up to date on the latest product releases, special offers &amp; news by signing up for our newsletter.<\/p>",
+            "newsletter_auto": 30
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "1484211369679": {
+              "type": "slide",
+              "settings": {
+                "hero_slide": "",
+                "hero_video": "",
+                "label1": "An Introductory Heading",
+                "label2": "Product real subheading",
+                "label3": "Short Explanatory Caption",
+                "button_label": "More",
+                "button_url": "",
+                "img_style": "light",
+                "labels_pos": "left"
+              }
+            },
+            "1484211385979": {
+              "type": "slide",
+              "settings": {
+                "hero_slide": "",
+                "hero_video": "",
+                "label1": "An Different Heading",
+                "label2": "Product Real Subheading",
+                "label3": "Longer Explanatory Caption",
+                "button_label": "More",
+                "button_url": "",
+                "img_style": "light",
+                "labels_pos": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1484211369679",
+            "1484211385979"
+          ],
+          "settings": {
+            "carousel_transition": "slide",
+            "carousel_autoplay": true,
+            "carousel_timer": 7
+          }
+        },
+        "collection-page": {
+          "type": "collection-page",
+          "settings": {
+            "collection_show_description": false,
+            "collection_pages": 12,
+            "collection_title_enabled": true,
+            "collection_filtering_enabled": true,
+            "collection_filtering_type": "by-tags",
+            "collection_sorting_enabled": true,
+            "collection_sharing_enabled": true,
+            "collections_border": "no",
+            "collections_anim_style": "three",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff"
+          }
+        },
+        "1484211598002": {
+          "type": "featured-products",
+          "settings": {
+            "collections_size": "small",
+            "collections_border": "no",
+            "collections_anim_style": "one",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff",
+            "home_list_products_max": 6,
+            "home_collections_select": ""
+          }
+        },
+        "blog-page": {
+          "type": "blog-page",
+          "settings": {
+            "blog_cols_range": 2,
+            "tags_filter": true,
+            "tags_enabled": true,
+            "author_enabled": true,
+            "rss_icon": true,
+            "blog_excerpt": "30"
+          }
+        },
+        "article-page": {
+          "type": "article-page",
+          "settings": {
+            "tags_enabled": true,
+            "author_enabled": true,
+            "rss_icon": true,
+            "blog_sharing_enabled": true
+          }
+        },
+        "1484213955784": {
+          "type": "collections-list",
+          "blocks": {
+            "1484213961776": {
+              "type": "collection",
+              "settings": {
+                "home_collections_select": ""
+              }
+            },
+            "1484213963329": {
+              "type": "collection",
+              "settings": {
+                "home_collections_select": ""
+              }
+            }
+          },
+          "block_order": [
+            "1484213961776",
+            "1484213963329"
+          ],
+          "settings": {
+            "collections_border": "no",
+            "collections_anim_style": "one",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff"
+          }
+        },
+        "1484213980467": {
+          "type": "rich-text",
+          "blocks": {
+            "example-text-block": {
+              "type": "text",
+              "settings": {
+                "content": "<p>Use this area to insert a tagline or some kind of call to action for your users!<\/p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\r\n<p><strong>Endless possibilities!<\/strong><\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "example-text-block"
+          ],
+          "settings": {}
+        },
+        "1484214054017": {
+          "type": "featured-blog",
+          "settings": {
+            "blog_cols_range": 2,
+            "tags_enabled": false,
+            "author_enabled": false,
+            "blog_excerpt": "30",
+            "home_blog_select": ""
+          }
+        }
+      },
+      "content_for_index": [
+        "1484213955784",
+        "1484211598002",
+        "1484213980467",
+        "1484214054017"
+      ]
+    },
+    "Prince": {
+      "sidebar_bg": "#129eaa",
+      "logo_color": "#ffffff",
+      "menus_1": "#ffffff",
+      "menus_3": "#ffffff",
+      "menus_5": "#ffffff",
+      "menus_6": "#ffffff",
+      "sidebar_text": "#a0d8dd",
+      "sidebar_links": "#ffffff",
+      "page_bg": "#f9f9f9",
+      "type_headings": "#1d1d1d",
+      "type_body": "#7d7d7d",
+      "type_additional": "#ababab",
+      "type_links": "#ef9564",
+      "form_back": "#ffffff",
+      "form_border": "#f5f5f5",
+      "form_style": "6px",
+      "form_label": "#b8b8b8",
+      "button_color": "#ec7e42",
+      "button_dark": "#ef9564",
+      "typography_headings": "Montserrat, sans-serif",
+      "typography_menus": "Montserrat, sans-serif",
+      "typography_body": "Raleway, sans-serif",
+      "typography_label1": "Arvo, serif",
+      "typography_label1_style": "normal",
+      "typography_label1_size": "18",
+      "typography_label2": "Montserrat, sans-serif",
+      "typography_label2_style": "normal",
+      "typography_label2_size": "56",
+      "typography_label3": "Montserrat, sans-serif",
+      "typography_label3_style": "normal",
+      "typography_label3_size": "14",
+      "favicon": "",
+      "cart_action": "overlay",
+      "cart_notes_enable": true,
+      "social_twitter": "",
+      "social_facebook": "",
+      "social_google": "",
+      "social_youtube": "",
+      "social_vimeo": "",
+      "social_pinterest": "",
+      "social_tumblr": "",
+      "social_instagram": "",
+      "social_linkedin": "",
+      "social_flickr": "",
+      "social_email": "",
+      "checkout_header_image": "",
+      "checkout_logo_image": "",
+      "checkout_logo_position": "left",
+      "checkout_logo_size": "medium",
+      "checkout_body_background_image": "",
+      "checkout_body_background_color": "#fff",
+      "checkout_input_background_color_mode": "white",
+      "checkout_sidebar_background_image": "",
+      "checkout_sidebar_background_color": "#fafafa",
+      "checkout_heading_font": "Helvetica Neue",
+      "checkout_body_font": "Helvetica Neue",
+      "checkout_accent_color": "#2a9dcc",
+      "checkout_button_color": "#2a9dcc",
+      "checkout_error_color": "#ff6d6d",
+      "logo_type": "text",
+      "search_products": false,
+      "checkout_use_header_image": false,
+      "checkout_banner_background_color": "#ffffff",
+      "checkout_logo": "",
+      "checkout_call_to_action_color": "#8fc243",
+      "sections": {
+        "sidebar": {
+          "type": "sidebar",
+          "settings": {
+            "logo_src": "",
+            "logo_width": "200",
+            "menu_main_select": "main-menu",
+            "menu_collections_select": "collections-parent",
+            "newsletter_sidebar": true,
+            "newsletter_sidebar_text": "Newsletter",
+            "footer_link_list": "",
+            "show_payment": false
+          }
+        },
+        "product-page": {
+          "type": "product-page",
+          "settings": {
+            "breadcrumb_enabled": true,
+            "product_vendor_enabled": true,
+            "truncated_description": true,
+            "truncated_description_lines_range": 5,
+            "quantity_selector": true,
+            "gallery_resizing": "fill",
+            "gallery_featured_image": false,
+            "gallery_transition": "slide",
+            "gallery_autoplay": true,
+            "gallery_timer": 6,
+            "gallery_zoom": false,
+            "gallery_background_color": "#f4f4f4"
+          }
+        },
+        "password-sharing": {
+          "type": "password-sharing",
+          "settings": {
+            "password_sharing_enabled": true
+          }
+        },
+        "popup": {
+          "type": "popup",
+          "settings": {
+            "bg": "",
+            "title": "Our Newsletter",
+            "content": "<p>Stay up to date on the latest product releases, special offers &amp; news by signing up for our newsletter.<\/p>",
+            "newsletter_auto": 30
+          }
+        },
+        "slideshow": {
+          "type": "slideshow",
+          "blocks": {
+            "1484211369679": {
+              "type": "slide",
+              "settings": {
+                "hero_slide": "",
+                "hero_video": "",
+                "label1": "An Introductory Heading",
+                "label2": "Product real subheading",
+                "label3": "Short Explanatory Caption",
+                "button_label": "More",
+                "button_url": "",
+                "img_style": "light",
+                "labels_pos": "left"
+              }
+            },
+            "1484211385979": {
+              "type": "slide",
+              "settings": {
+                "hero_slide": "",
+                "hero_video": "",
+                "label1": "An Different Heading",
+                "label2": "Product Real Subheading",
+                "label3": "Longer Explanatory Caption",
+                "button_label": "More",
+                "button_url": "",
+                "img_style": "light",
+                "labels_pos": "left"
+              }
+            }
+          },
+          "block_order": [
+            "1484211369679",
+            "1484211385979"
+          ],
+          "settings": {
+            "carousel_transition": "slide",
+            "carousel_autoplay": true,
+            "carousel_timer": 7
+          }
+        },
+        "collection-page": {
+          "type": "collection-page",
+          "settings": {
+            "collection_show_description": false,
+            "collection_pages": 12,
+            "collection_title_enabled": true,
+            "collection_filtering_enabled": true,
+            "collection_filtering_type": "by-tags",
+            "collection_sorting_enabled": true,
+            "collection_sharing_enabled": true,
+            "collections_border": "no",
+            "collections_anim_style": "three",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff"
+          }
+        },
+        "1484211598002": {
+          "type": "featured-products",
+          "settings": {
+            "collections_size": "small",
+            "collections_border": "no",
+            "collections_anim_style": "one",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff",
+            "home_list_products_max": 6,
+            "home_collections_select": ""
+          }
+        },
+        "blog-page": {
+          "type": "blog-page",
+          "settings": {
+            "blog_cols_range": 2,
+            "tags_filter": true,
+            "tags_enabled": true,
+            "author_enabled": true,
+            "rss_icon": true,
+            "blog_excerpt": "30"
+          }
+        },
+        "article-page": {
+          "type": "article-page",
+          "settings": {
+            "tags_enabled": true,
+            "author_enabled": true,
+            "rss_icon": true,
+            "blog_sharing_enabled": true
+          }
+        },
+        "1484213955784": {
+          "type": "collections-list",
+          "blocks": {
+            "1484213961776": {
+              "type": "collection",
+              "settings": {
+                "home_collections_select": ""
+              }
+            },
+            "1484213963329": {
+              "type": "collection",
+              "settings": {
+                "home_collections_select": ""
+              }
+            }
+          },
+          "block_order": [
+            "1484213961776",
+            "1484213963329"
+          ],
+          "settings": {
+            "collections_border": "no",
+            "collections_anim_style": "one",
+            "collections_thumb_style": "light",
+            "collections_thumb_bg": "#ffffff"
+          }
+        },
+        "1484213980467": {
+          "type": "rich-text",
+          "blocks": {
+            "example-text-block": {
+              "type": "text",
+              "settings": {
+                "content": "<p>Use this area to insert a tagline or some kind of call to action for your users!<\/p>\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<\/p>\r\n<p><strong>Endless possibilities!<\/strong><\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "example-text-block"
+          ],
+          "settings": {}
+        },
+        "1484214054017": {
+          "type": "featured-blog",
+          "settings": {
+            "blog_cols_range": 2,
+            "tags_enabled": false,
+            "author_enabled": false,
+            "blog_excerpt": "30",
+            "home_blog_select": ""
+          }
+        }
+      },
+      "content_for_index": [
+        "1484213955784",
+        "1484211598002",
+        "1484213980467",
+        "1484214054017"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+<div id="page-content" class="clearfix">
+
+	<header class="page-title">
+		<h1 class="title">{{ page.title }}</h1>
+	</header>
+
+	<div class="rte">
+		{{ page.content }}
+	</div>
+
+</div>
+
+<script>
+
+	jQuery(function($) {
+
+    $(window).load(function(){
+
+			$(window).on('hashchange', function(){
+				if ( location.hash !== '' ) {
+					$('html,body').animate({scrollTop: $(location.hash).offset().top - 50}, 350, 'easeInQuad');
+				}
+			});
+
+			if ( location.hash !== '' ) {
+				$('html,body').animate({scrollTop: $(location.hash).offset().top - 50}, 0, 'easeInQuad');
+			}
+
+    });
+
+	});
+
+</script>

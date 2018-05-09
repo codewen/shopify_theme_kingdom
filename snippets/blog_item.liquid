@@ -1,0 +1,73 @@
+{% capture date_format %} {{ 'general.date_format' | t }} {% endcapture %}
+<article class="post">
+
+	<header class="post-header">
+
+		<h2 class="title"><a href="{{ article.url }}">{{ article.title }}</a></h2>
+
+		<ul class="meta">
+
+			{% if section.settings.author_enabled %}
+				<li>
+					{{ 'blog.grid.before_author_text' | t }} {{ article.author }}
+				</li>
+			{% endif %}
+
+			<li>
+				{{ article.published_at | time_tag: date_format}}
+			</li>
+
+			{% if blog.comments_enabled? %}
+				<li>
+					<a href="{{ article.url }}#comments">{{ 'blog.grid.comments_count' | t: count: article.comments_count }}</a>
+				</li>
+			{% endif %}
+
+			{% if article.tags.size > 0 and section.settings.tags_enabled %}
+				<li>
+					{{ 'blog.grid.before_tags_text' | t }} 
+					{% for tag in article.tags %}
+						<a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag | capitalize }}</a>{% unless forloop.last %}, {% endunless %}
+					{% endfor %}
+				</li>
+			{% endif %}
+
+		</ul>
+
+	</header>
+
+	{% assign image_found = false %}
+
+	{% if article.image %}
+	
+		<a href="{{ article.url }}">
+
+			<div class="lazyload-container" style="padding-top:{{ 100 | divided_by: article.image.aspect_ratio }}%">
+        <img
+          src="{{ article.image.src | img_url: '480x' }}" alt="{{ article.image.alt }}"
+          srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          data-srcset="{{ article.image.src | img_url: '1920x' }} 1920w, {{ article.image.src | img_url: '1280x' }} 1280w, {{ article.image.src | img_url: '728x' }} 728w, {{ article.image.src | img_url: '480x' }} 480w"
+          data-sizes="auto"
+          class="lazyload" 
+        />
+  			<noscript><span class="ll-fallback" style="background-image:url({{ article.image.src | img_url: '480x' }})"></span></noscript> 
+      </div>
+    </a>
+
+	{% elsif article.content contains "<iframe"  %}
+		{% assign src = article.content | split: 'src="' %}
+		{% assign src = src[1] | split: '"' | first %}
+		<iframe src="{{ src }}" width="648" height="324"></iframe>
+	{% endif %}
+
+	<div class="excerpt">
+		{% if article.excerpt.size > 0 %}
+			{{ article.excerpt }}
+		{% else %}
+			<p>{{ article.content | strip_html | truncatewords: section.settings.blog_excerpt }}</p>
+		{% endif %}
+	</div>
+
+	<a class="more" href="{{ article.url }}">{{ 'blog.grid.read_more_label' | t }}</a>
+
+</article>

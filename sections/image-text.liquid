@@ -1,0 +1,79 @@
+<div id="section-{{ section.id }}" class="large-home-section">
+
+  <div id="block-{{ section.id }}" class="large-home-section-content text-light">
+
+    {% unless section.settings.title == blank %}
+      <h3 class="title">{{ section.settings.title | escape }}</h3>
+    {% endunless %}
+
+    {% unless section.settings.content == blank %}
+      <div class="rte">{{ section.settings.content }}</div>
+    {% endunless %}
+
+    {% unless section.settings.button == blank %}
+      <a class="button" {% unless section.settings.link == blank %} href="{{ section.settings.link | escape }}" {% endunless %}>{{ section.settings.button | escape }}</a>
+    {% endunless %}
+
+  </div>
+
+    <span class="large-home-section-background">
+
+    {% unless section.settings.bg_img == blank %} 
+     
+      <img
+        src="{{ section.settings.bg_img | img_url: '960x' }}" alt=""
+        srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        data-srcset="{{ section.settings.bg_img | img_url: '480x' }} 480w, {{ section.settings.bg_img | img_url: '720x' }} 720w, {{ section.settings.bg_img | img_url: '960x' }} 960w, {{ section.settings.bg_img | img_url: '1440x' }} 1440w, {{ section.settings.bg_img | img_url: '1920x' }} 1920w"
+        data-sizes="auto"
+        class="lazyload" />
+      <noscript><span class="ll-fallback" style="background-image:url({{ section.settings.bg_img | img_url: '960x' }})"></span></noscript> 
+
+    {% else %}
+    
+      {{ 'lifestyle-1' | placeholder_svg_tag }}
+
+    {% endunless %}
+
+  </span>
+  
+</div>
+
+{% schema %}
+  {
+    "name": "Image with text",
+    "class": "index-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Image with text"
+      },
+      {
+        "type": "richtext",
+        "id": "content",
+        "label": "Text",
+        "default": "<p>Share your latest products, collections or promotions!</p>"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "Button label"
+      },
+      {
+        "type": "url",
+        "id": "link",
+        "label": "Button link"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_img",
+        "label": "Background image"
+      }
+    ], 
+    "presets": [{
+      "name": "Image with text",
+      "category": "Image"
+    }]
+  }
+{% endschema %}

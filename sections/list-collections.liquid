@@ -1,0 +1,99 @@
+<div class="isotope-products home-content collections-list border-{{ section.settings.collections_border }} clearfix" data-section-id="{{ section.id }}" data-collections_size="{{ section.settings.collections_size }}" data-collections_border="{{section.settings.collections_border }}" data-collections_thumb_bg="{{ section.settings.collections_thumb_bg }}">
+
+  {% for collection in collections %}
+   
+		{% if collection.handle == 'frontpage' %}
+			{% continue %}
+	    {% endif %}
+
+		{% include 'collections_item' %}
+
+  {% endfor %}
+  
+  {% include 'asset_preloader' %}
+
+</div>
+
+{% schema %}
+  {
+    "name": "Collections page",
+    "class": "reload-isotope",
+    "settings": [
+      {
+        "type": "select",
+        "id": "collections_size",
+        "label": "Image size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_border",
+        "label": "Image border",
+        "default": "no",
+        "options": [
+          {
+            "value": "no",
+            "label": "No border"
+          },
+          {
+            "value": "true tiny",
+            "label": "Tiny"
+          },
+          {
+            "value": "true normal",
+            "label": "Normal"
+          },
+          {
+            "value": "true large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_anim_style",
+        "label": "Caption style",
+        "options": [
+          {
+            "value": "one",
+            "label": "Overlay left aligned"
+          },
+          {
+            "value": "three",
+            "label": "Overlay centered aligned"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_thumb_style",
+        "label": "Product text",
+        "options": [
+          {
+            "value": "light",
+            "label": "Dark"
+          },
+          {
+            "value": "dark",
+            "label": "Light"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "collections_thumb_bg",
+        "label": "Product hover",
+        "default": "#ffffff"
+      }
+    ]
+  }
+{% endschema %}

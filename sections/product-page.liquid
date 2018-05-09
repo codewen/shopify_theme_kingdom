@@ -1,0 +1,398 @@
+<article id="section-{{ section.id }}" class="product-page loading{% if collection == blank %} move-top{% endif %}" itemscope itemtype="//schema.org/Product" data-collection="{{ collection.handle }}" data-id="{{ product.id }}">
+
+	<div class="product-content clearfix">
+
+		<header class="product-header">
+
+			{% if section.settings.breadcrumb_enabled %}
+				{% include 'product_breadcrumb' %}
+			{% endif %}
+
+			<h1 itemprop="name" class="product-title">{{ product.title }}</h1>
+
+			{% if section.settings.product_vendor_enabled %}
+				<p class="product-vendor" itemprop="brand">{{ 'general.prefixes.by' | t }} {{ product.vendor | link_to_vendor }}</p>
+			{% endif %}
+
+			<span class="product-price">
+				<span class="productPrice">{{ product.price | money }}</span>
+				{% if product.compare_at_price > product.price %}
+					<span class="comparePrice info">{{ product.compare_at_price | money }}</span>
+				{% endif %}
+			</span>
+
+		</header>
+
+		<section class="product-description">
+
+			{% if section.settings.truncated_description_lines_range == 5 %}
+				{% assign truncated_description_lines_range = 123 %}
+			{% elsif section.settings.truncated_description_lines_range == 7 %}
+				{% assign truncated_description_lines_range = 173 %}
+			{% else %}
+				{% assign truncated_description_lines_range = 217 %}
+			{% endif %}
+
+			{% if section.settings.truncated_description %}
+				<style type="text/css">
+					#product-content div[itemprop="description"] > div {
+						height: {{ truncated_description_lines_range }}px;
+						overflow: hidden;
+					}
+				</style>
+			{% endif %}
+
+			<div itemprop="description">
+				<div class="rte">
+					{{ product.description }}
+				</div>
+			</div>
+
+			<div itemprop="offers" itemscope itemtype="//schema.org/Offer">
+
+        {% assign variant = product.selected_or_first_available_variant %}
+		        
+				<meta itemprop="price" content="{{ product.price | money_without_currency }}">
+				<meta itemprop="priceCurrency" content="{{ shop.currency }}">
+
+	        <link itemprop="availability" href="//schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
+
+	        <div id="add-to-cart-{{ section.id }}" class="add-to-cart" data-type="{{ settings.cart_action }}">
+
+		       	{% form 'product', product %}
+						
+							{% for option in product.options_with_values %}
+								<div class="product-variant selector-wrapper">
+							  	<label class="hidden">{{ option.name }}</label>
+							    <select class="product-variants">
+							      {% for value in option.values %}
+							        <option {% if option.selected_value == value %}selected{% endif %}>
+							          {{ value }}
+							        </option>
+							      {% endfor %}
+							    </select>
+						    </div>
+							{% endfor %}
+
+							 <select id="productSelect" name="id" class="styled" style="display: none !important">
+		            {% for variant in product.variants %}
+		              {% if variant.available %}
+		                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} value="{{ variant.id }}">
+		                  {{ variant.title }}
+		                </option>
+                               
+		              {% else %}
+		                <option disabled="disabled">{{ variant.title }}</option>
+		              {% endif %}
+		            {% endfor %}
+		          </select>
+
+		          <div class="buttons-holder">
+
+              	{% include 'product_quantity' %}
+
+								<button type="submit" name="add" class="addToCart button color"><span class="addToCartText">{{ 'products.page.add_to_cart_button' | t }}</span></button>
+								
+	              {% if section.settings.enable_payment_button %}
+	                {{ form | payment_button }}
+	              {% endif %}
+
+	            </div>
+
+							{% if settings.cart_action == 'overlay' %}
+								<a class="ajaxCartButton overlay-button hidden" data-overlay="#cart-overlay" aria-hidden="true"></a>
+							{% endif %}
+
+	      			<span class="variant-quantity"></span>
+
+					{% endform %}
+
+				</div>
+
+			</div>
+
+    	<a href="#" class="share-link overlay-button" data-overlay="#share-overlay">{% include 'asset_svg' with 'share_icon' %}{{ 'products.page.share_link' | t }}</a>
+
+ 		</section>
+
+ 	</div>
+
+	<section class="product-gallery scale-up-{{ section.settings.gallery_resizing }} {% if product.images.size == 0 %} loaded {% endif %}">
+
+		<style type="text/css">
+			#section-{{ section.id }} .product-gallery {
+				background: {{ section.settings.gallery_background_color }};
+			}
+			#section-{{ section.id }} .product-gallery  .swiper-container .swiper-slide {
+				background: {{ section.settings.gallery_background_color }};
+			}
+		</style>
+
+		{% assign featured_image = product.selected_or_first_available_variant.featured_image | default: product.featured_image %}
+
+		{% assign gallery_zoom = section.settings.gallery_zoom %}
+		{% if section.settings.gallery_transition == 'fade' %}
+			{% assign gallery_zoom = false %}
+		{% endif %}
+
+		<div class="swiper-container">
+
+			<div class="swiper-wrapper">
+
+				{% if product.images.size == 0 %} 
+   
+  				<div class="swiper-slide">
+            <span class="onboarding-svg with-background">
+              {{ 'product-1' | placeholder_svg_tag }}
+            </span>
+  				</div>
+
+				{% endif %}
+
+				{% for image in product.images %}
+
+					{% if forloop.length == 1 %}
+
+						<div class="swiper-slide">
+							<div class="swiper-zoom-container">
+
+				          <img
+				            src="{{ featured_image.src | img_url: '768x' }}" alt="{{ image.alt | escape }}"
+				            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+				            data-srcset="{{ featured_image.src | img_url: '1920x' }} 1920w, {{ featured_image.src | img_url: '1480x' }} 1480w, {{ featured_image.src | img_url: '1024x' }} 1024w, {{ featured_image.src | img_url: '768x' }} 768w"
+				            data-sizes="auto"
+				            class="lazyload swiper-img" 
+				          />
+	   							<noscript><span class="ll-fallback" style="background-image:url({{ featured_image.src | img_url: '768x' }})"></span></noscript> 
+
+							</div>
+						</div>
+
+					{% else %}
+
+						{% if section.settings.gallery_featured_image == false and product.featured_image == image %}
+
+							<!-- skip featured image -->
+
+						{% else %}
+
+							<div class="swiper-slide" data-index="{{ forloop.index }}"{% if image.attached_to_variant? %} data-variant-img="{{ image.variants[0].featured_image.id }}"{% endif %}>
+								<div class="swiper-zoom-container">
+
+				          <img
+				            src="{{ image.src | img_url: '768x' }}" alt="{{ image.alt | escape }}"
+				            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+				            data-srcset="{{ image.src | img_url: '1920x' }} 1920w, {{ image.src | img_url: '1480x' }} 1480w, {{ image.src | img_url: '1024x' }} 1024w, {{ image.src | img_url: '768x' }} 768w"
+				            data-sizes="auto"
+				            class="lazyload swiper-img" 
+				          />
+	   							<noscript><span class="ll-fallback" style="background-image:url({{ image.src | img_url: '768x' }})"></span></noscript> 
+
+								</div>
+							</div>
+
+						{% endif %}
+
+					{% endif %}
+
+				{% endfor %}
+
+			</div>
+
+			<div class="swiper-pagination"></div>
+
+		</div>
+
+		{% if gallery_zoom %} 
+			<div class="draw-buttons zoom">
+				<div class="holder">
+					<span>
+						{% include 'asset_svg' with 'zoom_icon' %}
+						{% include 'asset_svg' with 'zoom_out_icon' %}
+					</span>
+				</div>
+			</div>
+		{% endif %}
+
+    {% include 'asset_preloader' %}
+
+	</section>
+
+	{% capture left_icon %}{% include 'asset_svg' with 'left_icon' %}{% endcapture %}
+	{% capture right_icon %}{% include 'asset_svg' with 'right_icon' %}{% endcapture %}
+
+	{% if collection %}
+
+		{% if collection.previous_product or collection.next_product %}
+
+			<nav class="draw-buttons nav{% if collection.previous_product and collection.next_product %} three{% endif %}{% unless collection.next_product %} last-nav-mobile{% endunless %}">
+
+				<div class="holder">
+
+					{% if collection.previous_product %}
+						{% capture prev_url %}{{ collection.previous_product}}{% endcapture %}
+						<span class="btn-prev">
+							{{ left_icon }}
+							{{ '&larr;' | link_to: prev_url }}
+						</span>
+					{% endif %}
+
+					<span class="btn-close">
+						<span class="back">
+							{% include 'asset_svg' with 'close_icon' %}
+							<a href="{{ collection.url }}"></a>
+						</span>
+						<span class="front">
+							{% include 'asset_svg' with 'grid_icon' %}
+						</span>
+					</span>
+
+					{% if collection.next_product %}
+						{% capture next_url %}{{ collection.next_product}}{% endcapture %}
+						<span class="btn-next">
+							{{ right_icon }}
+							{{ '&rarr;' | link_to: next_url }}
+						</span>
+					{% endif %}
+
+				</div>
+
+			</nav>
+
+		{% endif %}
+
+	{% endif %}
+
+</article>
+
+<div class="product-settings" data-truncated_description="{{ section.settings.truncated_description }}" data-truncated_description_lines_range="{{ truncated_description_lines_range }}" data-gallery_max_size="{% if section.settings.gallery_resizing == 'fill' %}true{% else %}false{% endif %}" data-gallery_resizing="{{ section.settings.gallery_resizing }}" data-gallery_transition="{{ section.settings.gallery_transition }}" data-gallery_autoplay="{{ section.settings.gallery_autoplay }}" data-gallery_timer="{{ section.settings.gallery_timer }}" data-gallery-posfix="{{ section.settings.gallery_featured_image }}" data-zoom="{{ gallery_zoom }}" data-hide-variants="{{ section.settings.hide_variants }}" data-product-available="{{ product.available }}"></div>
+
+{% unless product.empty == empty %}
+
+  <script type="application/json" id="ProductJson-{{ section.id }}" class="product-json">
+    {{ product | json }}
+  </script>
+
+{% endunless %}
+
+{% schema %}
+	{
+    "name": "Product page",
+    "class": "reload-product-page mount-overlay",
+    "settings": [
+			{
+        "type": "header",
+        "content": "Content"
+      },
+      {
+        "type": "checkbox",
+        "id": "breadcrumb_enabled",
+        "label": "Show breadcrumb"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_vendor_enabled",
+        "label": "Show vendor"
+      },
+      {
+        "type": "checkbox",
+        "id": "truncated_description",
+        "label": "Show truncated description"
+      },
+      {
+        "type": "range",
+        "id": "truncated_description_lines_range",
+        "label": "Number of truncated lines",
+        "min": 5,
+        "max": 9,
+        "step": 2,
+        "default": 5
+      },
+      {
+        "type": "checkbox",
+        "id": "quantity_selector",
+        "label": "Show quantity selector"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_variants",
+        "label": "Hide out of stock variants",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_payment_button",
+        "label": "Show dynamic checkout button",
+        "info": "Lets customers check out directly using a familiar payment method. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Gallery"
+      },
+      {
+        "type": "select",
+        "id": "gallery_resizing",
+        "label": "Images size",
+        "options": [
+          {
+            "value": "fill",
+            "label": "Scale to fill"
+          },
+          {
+            "value": "fit-both",
+            "label": "Normal"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "gallery_featured_image",
+        "default": true,
+        "label": "Show featured image"
+      },
+      {
+        "type": "select",
+        "id": "gallery_transition",
+        "label": "Transition",
+        "options": [
+          {
+            "value": "slide",
+            "label": "Slide"
+          },
+          {
+            "value": "fade",
+            "label": "Fade"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "gallery_autoplay",
+        "label": "Auto rotate slides"
+      },
+      {
+        "type": "range",
+        "id": "gallery_timer",
+	      "label": "Rotation interval",
+	      "min": 4,
+	      "max": 8,
+	      "step": 1,
+	      "unit": "sec",
+	      "default": 4
+      },
+      {
+        "type": "checkbox",
+        "id": "gallery_zoom",
+        "label": "Enable image zoom",
+        "info": "Only works when the transition is set to slide"
+      },
+      {
+        "type": "color",
+        "id": "gallery_background_color",
+        "label": "Product gallery background",
+        "default": "#ebebeb"
+      }
+    ]
+   }
+{% endschema %}

@@ -1,0 +1,79 @@
+{% unless current_collection %}
+	{% assign current_collection = collection %}
+{% endunless %}
+
+{% capture shop_title %}{{ 'products.grid.shop_collection_title' | t }}{% endcapture %}
+
+{% assign on_sale = false %}
+{% if product.compare_at_price > product.price %}
+	{% assign on_sale = true %}
+{% endif %}
+
+{% assign sold_out = true %}
+{% if product.available  %}
+	{% assign sold_out = false %}
+{% endif %}
+
+<a href="{{ product.url | within: collection }}" class="grid-item {{ section.settings.collections_anim_style }} {{ section.settings.collections_thumb_style }}">
+
+	{% if product.images.size == 0 %} 
+
+  	<span class="grid-item-image onboarding-svg" style="padding-top: 100%">
+	    {{ 'product-1' | placeholder_svg_tag }}
+	   </span>
+
+	{% else %}
+
+		<div class="grid-item-image" style="padding-top:{{ 100 | divided_by: product.featured_image.aspect_ratio }}%">
+
+	    <img
+	      src="{{ product.featured_image.src | img_url: '640x' }}" alt="{{ product.featured_image.alt | escape }}"
+	      srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+	      data-srcset="{{ product.featured_image.src | img_url: '360x' }} 360w, {{ product.featured_image.src | img_url: '480x' }} 480w, {{ product.featured_image.src | img_url: '960x' }} 960w, {{ product.featured_image.src | img_url: '1440x' }} 1440w, {{ product.featured_image.src | img_url: '1920x' }} 1920w"
+	      data-sizes="auto"
+	      class="lazyload"
+	    />
+
+	    <noscript><span class="ll-fallback" style="background-image:url({{ product.featured_image.src | img_url: '960x' }})"></span></noscript> 
+
+	  	{% if section.settings.product_show_secondary and product.images.size >= 2 %}
+
+		    <img
+		      src="{{ product.images[1].src | img_url: '640x' }}" alt="{{ product.images[1].alt | escape }}"
+		      srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+		      data-srcset="{{ product.images[1].src | img_url: '360x' }} 360w, {{ product.images[1].src | img_url: '480x' }} 480w, {{ product.images[1].src | img_url: '960x' }} 960w, {{ product.images[1].src | img_url: '1440x' }} 1440w, {{ product.images[1].src | img_url: '1920x' }} 1920w"
+		      data-sizes="auto"
+		      class="lazyload grid-item-secondary-image"
+		    />
+
+	  	{% endif %}
+
+	  </div>
+
+	{% endif %}
+
+  <div class="caption">
+
+  	{% if section.settings.collections_anim_style == 'one' %}
+    		{% include 'collection_item-one' %}
+		{% elsif section.settings.collections_anim_style == 'two' %}
+    		{% include 'collection_item-two' %}
+		{% elsif section.settings.collections_anim_style == 'three' %}
+    		{% include 'collection_item-three' %}
+		{% elsif section.settings.collections_anim_style == 'four' %}
+    		{% include 'collection_item-four' %}
+		{% endif %}
+
+	</div>
+
+	{% if sold_out %}
+		<span class="add sold"><span>{{ 'products.grid.sold_out_product' | t }}</span></span>
+	{% elsif on_sale %}
+		{% if section.settings.collections_anim_style == 'four' %}
+			<span class="add sale percent"><span>-{{ product.compare_at_price_max | minus: product.price | times: 100.0 | divided_by: product.compare_at_price_max | money_without_currency | times: 100 | remove: '.0'}}%</span></span>
+		{% else %}
+			<span class="add sale"><span>{{ 'products.grid.on_sale_product' | t }}</span></span>
+		{% endif %}
+	{% endif %}
+
+</a>

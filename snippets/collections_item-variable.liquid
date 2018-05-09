@@ -1,0 +1,79 @@
+{% assign collection = collections_item-variable %}
+
+{% capture collection_title %} {{ collection.title | escape }} {% endcapture %}
+
+{% if collection.image %}
+
+	{% capture collection_image %}
+
+		<div class="grid-item-image" style="padding-top:{{ 100 | divided_by: collection.image.aspect_ratio }}%">
+	    <img
+	      src="{{ collection | img_url: '640x' }}" alt="{{ collection.image.alt | escape }}"
+	      srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+	      data-srcset="{{ collection | img_url: '360x' }} 360w, {{ collection | img_url: '480x' }} 480w, {{ collection | img_url: '960x' }} 960w, {{ collection | img_url: '1440x' }} 1440w, {{ collection | img_url: '1920x' }} 1920w"
+	      data-sizes="auto"
+	      class="lazyload"
+	    />
+	    <noscript><span class="ll-fallback" style="background-image:url({{ collection | img_url: '640x' }})"></span></noscript> 
+		</div>
+
+	{% endcapture %}
+
+{% else %}
+
+	{% if collection.products.size == 0 %}
+
+		{% capture collection_image %} 
+			
+	  	<span class="grid-item-image onboarding-svg relative" style="padding-top: 100%">
+	  		{{ 'collection-1' | placeholder_svg_tag }}
+	   	</span>
+
+	   {% endcapture %}
+
+	{% else %}
+
+		{% capture collection_image %} 
+			<div class="grid-item-image" style="padding-top:{{ 100 | divided_by: collection.products.first.featured_image.aspect_ratio }}%">
+		    <img
+		      src="{{ collection.products.first | img_url: '640x' }}" alt="{{ collection.title | escape }}"
+		      srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+		      data-srcset="{{ collection.products.first | img_url: '360x' }} 360w, {{ collection.products.first | img_url: '480x' }} 480w, {{ collection.products.first | img_url: '960x' }} 960w, {{ collection.products.first | img_url: '1440x' }} 1440w, {{ collection.products.first | img_url: '1920x' }} 1920w"
+		      data-sizes="auto"
+		      class="lazyload"
+		    />
+	   		<noscript><span class="ll-fallback" style="background-image:url({{ collection.products.first | img_url: '640x' }})"></span></noscript> 
+			</div>
+		{% endcapture %}
+
+	{% endif %}
+
+{% endif %}
+
+<a href="{{ collection.url }}" class="grid-item {{ section.settings.collections_anim_style }} {{ section.settings.collections_thumb_style }}">
+
+	{{ collection_image }}
+
+    <div class="caption">
+
+    	{% if section.settings.collections_anim_style == 'one' %}
+
+	    	<div class="top">
+		    	<h2>{{ collection_title}}</h2>
+		    </div>
+
+		    <div class="bottom">
+		    	<span class="info"><span class="hide-on-600">{{ 'collections.view_products' | t }}</span> &rarr;</span>
+		    </div>
+
+    	{% else %}
+
+    		<div>
+    			<div><h2>{{ collection_title}}</h2></div>
+    		</div>
+
+    	{% endif %}
+
+	</div>
+
+</a>

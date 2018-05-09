@@ -1,0 +1,13 @@
+<div class="option">
+	<label for="filter-by">{{ 'collections.filter_dropdown.filter_label' | t }}</label>
+	<select name="filter-by" id="filter-by">
+    	<option value="">{{ 'collections.filter_dropdown.filter_all' | t }}</option>
+	    {% for tag in collection.all_tags %}
+		    {% if current_tags contains tag %}
+		    	<option value="{{ tag | handle }}" selected>{{ tag }}</option>
+		    {% else %}
+		    	<option value="{{ tag | handle }}">{{ tag }}</option>
+		    {% endif %}
+	    {% endfor %}
+	</select>
+</div>

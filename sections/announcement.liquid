@@ -1,0 +1,46 @@
+{% if section.settings.ann_show %}
+
+  <div id="section-{{ section.id }}" class="large-home-section">
+
+    <div id="block-{{ section.id }}" class="large-home-section-content">
+
+      {% unless section.settings.ann_link == blank %}
+        <a href="{{ section.settings.ann_link }}">
+      {% endunless %}
+
+        <p class="title">{{ section.settings.ann_text | escape }}</p>
+
+      {% unless section.settings.ann_link == blank %}
+        </a>
+      {% endunless %}
+
+    </div>
+
+  </div>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Announcement bar",
+    "class": "index-section section-with-background",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "ann_show",
+        "label": "Show announcement"
+      },
+      {
+        "type": "text",
+        "id": "ann_text",
+        "label": "Announcement text",
+        "default": "Inform your customers about important news, such as discounts or new offers."
+      },
+      {
+        "type": "url",
+        "id": "ann_link",
+        "label": "Announcement link"
+      }
+    ]
+  }
+{% endschema %}

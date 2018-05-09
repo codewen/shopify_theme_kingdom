@@ -1,0 +1,223 @@
+{% assign number_of_comments = article.comments_count %}
+{% capture date_format %} {{ 'general.date_format' | t }} {% endcapture %}
+{% if comment and comment.created_at %}
+	{% assign number_of_comments = article.comments_count | plus: 1 %}
+{% endif %}
+
+<div id="page-content" class="blog-grid clearfix">
+
+	<header class="page-title">
+		<h2 class="title">{{ blog.title }}</h2>
+		{% if section.settings.rss_icon %} <a href="{{ blog.url }}.atom" target="_blank" class="fa fa-rss"></a> {% endif %}
+	</header>
+
+	<article class="post" itemscope itemtype="//schema.org/Article">
+
+		<header class="post-header">
+
+			<h1 class="title">{{ article.title }}</h1>
+
+			<ul class="meta">
+
+				{% if section.settings.author_enabled %}
+					<li>
+						{{ 'blog.grid.before_author_text' | t }} {{ article.author }}
+					</li>
+				{% endif %}
+
+				<li>
+					{{ article.published_at | time_tag: date_format}}
+				</li>
+
+				{% if blog.comments_enabled? %}
+					<li>
+						{{ 'blog.grid.comments_count' | t: count: article.comments_count }}
+					</li>
+				{% endif %}
+
+				{% if article.tags.size > 0 and section.settings.tags_enabled %}
+					<li>
+						{{ 'blog.grid.before_tags_text' | t }} 
+						{% for tag in article.tags %}
+							<a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag | capitalize }}</a>{% unless forloop.last %}, {% endunless %}
+						{% endfor %}
+					</li>
+				{% endif %}
+
+			</ul>
+
+		</header>
+
+		<section itemprop="articleBody" class="rte">
+			{% if article.image %}
+				<p>
+					<div class="lazyload-container" style="padding-top:{{ 100 | divided_by: article.image.aspect_ratio }}%">
+	          <img
+	            src="{{ article.image.src | img_url: '728x' }}" alt="{{ article.image.alt }}"
+	            srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+	            data-srcset="{{ article.image.src | img_url: '1920x' }} 1920w, {{ article.image.src | img_url: '1280x' }} 1280w, {{ article.image.src | img_url: '728x' }} 728w"
+	            data-sizes="auto"
+	            class="lazyload" 
+	          />
+	    			<noscript><span class="ll-fallback" style="background-image:url({{ article.image.src | img_url: '728x' }})"></span></noscript> 
+	        </div>
+         </p>
+			{% endif %}
+			{{ article.content }}
+		</section>
+
+		{% if section.settings.blog_sharing_enabled %}
+    		<a href="#" class="share-link overlay-button" data-overlay="#share-overlay">{% include 'asset_svg' with 'share_icon' %}{{ 'products.page.share_link' | t }}</a>
+    	{% endif %}
+
+		{% if blog.comments_enabled? %}
+
+			<aside id="comments">
+
+				<h3>{{ 'blog.article.comments_list_title' | t }} ({{ article.comments_count }})</h3>
+
+				{% paginate article.comments by 5 %}
+
+					<div>
+
+						{% if comment and comment.created_at %}
+							<p class="note form-success">
+								{% if blog.moderated? %}
+									{{ 'blog.article.comment_under_moderation' | t }}
+								{% else %}
+									{{ 'blog.article.comment_posted' | t }}
+								{% endif %}
+							</p>
+						{% endif %}
+
+						{% if number_of_comments > 0 %}
+
+							<ul id="comments-list">
+
+								{% for comment in article.comments %}
+									<li id="{{ comment.id }}" class="comment{% unless number_of_comments > article.comments_count %}{% if forloop.first %} first{% endif %}{% endunless %}{% if forloop.last %} last {% endif %}">
+										{% include 'blog_comment' %}
+									</li>
+								{% endfor %}
+
+							</ul>
+
+							{% if paginate.pages > 1 %}
+								{% include 'main_pagination' %}
+							{% endif %}
+
+						{% else %}
+
+							<p class="note no-comments">{{ 'blog.article.no_comments_message' | t }}</p>
+
+						{% endif %}
+
+						<div id="comments-form">
+
+							{% form 'new_comment', article %}
+
+								<h3 id="add-comment-title">{{ 'blog.article.comments_form_title' | t }}</h3>
+
+								{% include 'form-errors' %}
+
+								<div class="krown-column-container span6 first">
+									<label for="comment-author" class="hidden-label">{{ 'blog.article.comments_form_name_label' | t }}</label>
+									<input {% if form.errors contains "author" %} class="error"{% endif %} type="text" name="comment[author]" placeholder="{{ 'blog.article.comments_form_name_label' | t }}" id="comment-author" value="{{ form.author }}" autocapitalize="words">
+								</div>
+
+								<div class="krown-column-container span6 last">
+									<label for="comment-email" class="hidden-label">{{ 'blog.article.comments_form_email_label' | t }}</label>
+									<input {% if form.errors contains "email" %} class="error"{% endif %} type="email" name="comment[email]" placeholder="{{ 'blog.article.comments_form_email_label' | t }}" id="comment-email" value="{{ form.email }}" autocorrect="off" autocapitalize="off">
+								</div>
+
+								<div class="krown-column-container span12 first last">
+									<label for="comment-body" class="hidden-label">{{ 'blog.article.comments_form_message_label' | t }}</label>
+									<textarea {% if form.errors contains "body" %} class="error"{% endif %} name="comment[body]" id="comment-body" placeholder="{{ 'blog.article.comments_form_message_label' | t }}">{{ form.body }}</textarea>
+								</div>
+
+								{% if blog.moderated? %}
+									<p><em>{{ 'blog.article.comments_notice' | t }}</em></p>
+								{% endif %}
+
+								<input type="submit" class="button dark" value="{{ 'blog.article.comments_form_submit_label' | t }}">
+
+								{% if form.errors %}
+									<script>
+										window.location.hash = '#add-comment-title';
+									</script>
+								{% endif %}
+
+								{% if form.posted_successfully? %}
+									<script>
+										window.location.hash = '#comments';
+									</script>
+								{% endif %}
+
+							{% endform %}
+
+						</div>
+
+					</div>
+
+				{% endpaginate %}
+
+			</aside>
+
+		{% endif %}
+
+	</article>
+
+	{% if blog.next_article or blog.previous_article %}
+
+		<div class="post-navigation">
+			
+			{% if blog.previous_article %}
+				<span class="left">
+					&larr; {{ 'blog.article.previous_post_link' | t | link_to: blog.previous_article }}
+				</span>
+			{% endif %}
+
+			{% if blog.next_article %}
+				<span class="right">
+					{{ 'blog.article.next_post_link' | t | link_to: blog.next_article }} &rarr;
+				</span>
+			{% endif %}
+
+		</div>
+
+	{% endif %}
+
+</div>
+
+{% schema %}
+	{
+    "name": "Article page",
+    "class": "article-page",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Settings"
+      },
+      {
+        "type": "checkbox",
+        "id": "tags_enabled",
+        "label": "Show post tags"
+      },
+      {
+        "type": "checkbox",
+        "id": "author_enabled",
+        "label": "Show post author"
+      },
+      {
+        "type": "checkbox",
+        "id": "rss_icon",
+        "label": "Show RSS icon"
+      },
+      {
+        "type": "checkbox",
+        "id": "blog_sharing_enabled",
+        "label": "Enable blog post sharing"
+      }
+    ]
+  }
+{% endschema %}

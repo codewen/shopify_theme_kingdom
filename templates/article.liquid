@@ -1,0 +1,23 @@
+{% section 'article-page' %}
+
+<script>
+
+	jQuery(function($) {
+
+	    $(window).load(function(){
+
+			if ( location.hash == "#add-comment-title" ) {
+				setTimeout(function(){
+					$('html,body').animate({scrollTop: $('#add-comment-title').offset().top - 50}, 350, 'easeInQuad');
+				}, 500); 
+			} else if ( location.hash == "#comments" ) {
+				setTimeout(function(){
+					$('html,body').animate({scrollTop: $('#comments').offset().top - 50}, 350, 'easeInQuad');
+				}, 500);
+			}
+
+		});
+
+	});
+
+</script>

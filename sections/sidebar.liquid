@@ -1,0 +1,157 @@
+<div id="sidebar-holder">
+
+	<div id="sidebar">
+
+		<div style="flex: 1 0 auto;">
+
+	    <header id="logo">
+
+				{% if template == 'index' %}
+					<h1 itemscope itemtype="//schema.org/Organization">
+				{% else %}
+					<h3 itemscope itemtype="//schema.org/Organization">
+				{% endif %}
+
+					{% if section.settings.logo_src  %}
+
+						<a class="logo-img" href="/" itemprop="url">
+							<img src="{{ section.settings.logo_src | img_url: 'master' }}" alt="{{ shop.name }}" style="max-width: {{ section.settings.logo_width | escape }}px;" />
+						</a>
+
+					{% else %}
+
+						<a class="logo-txt" href="/" itemprop="url">{{ shop.name }}</a>
+
+					{% endif %}
+
+				{% if template == 'index' %}
+					</h1>
+				{% else %}
+					</h3>
+				{% endif %}
+
+	    </header>
+
+	    <div id="meta">
+
+				<div class="item responsive-menu">
+					<a href="#">Menu</a>
+					{% include 'asset_svg' with 'hamburger_icon' %}
+				</div>
+
+		    	{% if shop.customer_accounts_enabled %}
+		    		<div class="item">
+		    			{% if customer %}
+		    				<a href="/account">Account</a>
+	    				{% else %}
+		    				<a href="/account/login">Account</a>
+						{% endif %}
+						{% include 'asset_svg' with 'account_icon' %}
+		    		</div>
+	    		{% endif %}
+
+		    	<div class="item">
+		    		<a href="#" id="main-search" class="overlay-button" data-overlay="#search-overlay">Search</a>
+	    			{% include 'asset_svg' with 'search_icon' %}
+		    	</div>
+
+				<div class="item">
+					<a href="/cart">Cart</a>
+					{% include 'asset_svg' with 'cart_icon' %}
+					<span class="count">{{ cart.item_count }}</span>
+				</div>
+
+	    </div>
+
+			<nav id="menu" role="navigation">
+				{% unless section.settings.newsletter_sidebar %} 
+					<style type="text/css">
+						.sidebar-popup-button {
+							display: none;
+						}
+					</style>
+				{% endunless %}
+				<div>
+					{% include 'sidebar_nav-collections' with section.settings.menu_collections_select %}
+					{% include 'sidebar_nav-main' with section.settings.menu_main_select %}
+				</div>
+				<a class="responsive-close" href="#">{% include 'asset_svg' with 'close_icon' %}</a>
+			</nav>
+
+		</div>
+
+		<aside id="footer" class="loading">
+			{% include 'footer_social-icons' %}
+			{% include 'footer_links' %}
+		</aside>
+
+	</div>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Sidebar",
+    "class": "mount-sidebar mount-overlay",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo_src",
+        "label": "Image"
+      },
+      {
+        "type": "text",
+        "id": "logo_width",
+        "label": "Custom logo width (in pixels)",
+        "default": "100"
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_main_select",
+        "label": "Primary navigation",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "menu_collections_select",
+        "label": "Secondary navigation"
+      },
+      {
+        "type": "checkbox",
+        "id": "newsletter_sidebar",
+        "label": "Show popup link in sidebar"
+      },
+      {
+        "type": "text",
+        "id": "newsletter_sidebar_text",
+        "label": "Popup link text",
+        "default": "Newsletter"
+      },
+      {
+        "type": "header",
+        "content": "Footer"
+      },
+      {
+	      "type": "link_list",
+	      "id": "footer_link_list",
+	      "label": "Footer navigation",
+	      "default": "footer",
+	      "info": "This menu won't show dropdown items"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_payment",
+        "label": "Show payment icons",
+        "default": true
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,59 @@
+{% assign current_menu = sidebar_nav-collections %}
+{% assign menu = linklists[current_menu] %}
+{% capture menu_size %} {{ menu.links | size }} {% endcapture %}
+
+<ul class="top-menu collections-menu size-{{ menu_size | lstrip | rstrip }}">
+
+	{% for link in menu.links %}
+
+		<li class="{% if link.links != blank %} submenu {% endif %} {% if link.active or link.child_active %} selected {% endif %}" {% if link.links != blank %} aria-haspopup="true" {% endif %}>
+
+			<a href="{{ link.url }}">
+				{{ link.title }}
+				{% if link.links != blank %} {% include 'asset_svg' with 'arrow_icon' %} {% endif %}
+			</a>
+
+			{% if link.links != blank %}
+
+				<ul class="sub-menu" aria-expanded="false">
+
+					{% for childlink in link.links %}
+
+						<li class="{% if childlink.links != blank %} submenu {% endif %} {% if childlink.active or childlink.child_active %} selected {% endif %}" {% if childlink.links != blank %} aria-haspopup="true" {% endif %}>
+
+							<a href="{{ childlink.url }}">
+								{{ childlink.title | escape }}
+								{% if childlink.links != blank %} {% include 'asset_svg' with 'arrow_icon' %} {% endif %}
+							</a>
+
+							{% if childlink.links != blank %}
+								
+								<ul class="sub-menu third-level" aria-expanded="false">
+
+									{% for subchildlink in childlink.links %}
+
+										<li {% if subchildlink.active %} class="selected" {% endif %}>
+
+											<a href="{{ subchildlink.url }}">{{ subchildlink.title | escape }}</a>
+
+										</li>
+
+									{% endfor %}
+
+								</ul>
+
+							{% endif %}
+
+						</li>
+
+					{% endfor %}
+
+				</ul>
+
+			{% endif %}
+
+		</li>
+
+	{% endfor %}
+
+</ul>

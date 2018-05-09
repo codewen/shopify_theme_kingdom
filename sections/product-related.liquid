@@ -1,0 +1,227 @@
+{% if section.settings.related_enable %}
+
+  <div id="product-related" class="krown-related-products">
+  
+    <div class="title">
+    	<h3>{{ 'products.page.related_products_title' | t }}</h3>
+      <p>{{ 'products.page.related_products_subtitle' | t }}</p>
+    </div>
+
+  	<div class="content">
+
+  		<div class="isotope-products home-content products-list related-products-list border-{{ section.settings.collections_border }}" data-section-id="{{ section.id }}" data-collections_size="{{ section.settings.collections_size }}" data-collections_border="{{section.settings.collections_border }}" data-collections_thumb_bg="{{ section.settings.collections_thumb_bg }}">
+
+  			{% assign check_collections = 0 %}
+  			{% assign max_products = section.settings.related_max %}
+
+  			{% assign found_product_ids = product.id | append: ' , ' %}
+  			{% assign current_product_found = false %}
+
+  			{% if product.collections.size == 0 %}
+  			  {% assign product_collections = collections | reverse %}
+  			{% else %}
+  			  {% assign product_collections = product.collections | reverse %}
+  			{% endif %}
+
+  			{% if collection %}
+
+  			  {% for product in collection.products %}
+
+  			    {% if collection.previous_product %}
+
+  			      {% if collection.previous_product contains product.handle %}
+
+                {% unless found_product_ids contains product.id %}
+
+    			        {% assign check_collections = check_collections | plus: 1 %}
+    			        {% assign found_product_ids = found_product_ids | append: ' , ' | append: product.id %}
+
+    							{% include 'collection_item' %}
+
+                {% endunless %}
+
+  			      {% endif %}
+
+  			    {% endif %}
+
+  			    {% if collection.next_product %}
+
+  			      {% if collection.next_product contains product.handle %}
+
+                {% unless found_product_ids contains product.id %}
+
+    			        {% assign check_collections = check_collections | plus: 1 %}
+    			        {% assign found_product_ids = found_product_ids | append: ' , ' | append: product.id %}
+
+    							{% include 'collection_item' %}
+
+                {% endunless %}
+
+  			      {% endif %}
+
+  			    {% endif %}
+
+  			  {% endfor %}
+
+  			{% endif %}
+
+  			{% for collection in product_collections %}
+
+  			  {% if check_collections < max_products %}
+  			    {% unless collection.handle contains 'frontpage' %}
+
+  			      {% paginate collection.products by 8 %}
+
+  			        {% assign collection_products = collection.products %}
+
+  			        {% for product in collection_products %}
+
+  			          {% if check_collections < max_products %}
+
+  			            {% if found_product_ids contains product.id %}
+  			              {% assign current_product_found = true %}
+  			            {% else %}
+  			              {% unless current_product_found == false and forloop.index == forloop.length %}
+
+  											{% include 'collection_item' %}
+
+                        {% assign found_product_ids = found_product_ids | append: ' , ' | append: product.id %}
+  			                {% assign check_collections = check_collections | plus: 1 %}
+
+  			              {% endunless %}
+  			            {% endif %}
+
+  			          {% endif %}
+
+  			        {% endfor %}
+
+  			      {% endpaginate %}
+
+  			    {% endunless %}
+  			  {% endif %}
+  			{% endfor %}
+
+        {% include 'asset_preloader' %}
+
+  		</div>
+
+  	</div>
+
+  </div>
+
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Related products",
+    "class": "reload-isotope mount-overlay reload-related",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "related_enable",
+        "label": "Enable",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "related_max",
+        "label": "Number of products",
+        "min": 2,
+        "max": 12,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "header",
+        "content": "Appearance"
+      },
+      {
+        "type": "select",
+        "id": "collections_size",
+        "label": "Image size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Medium"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_border",
+        "label": "Image border",
+        "options": [
+          {
+            "value": "no",
+            "label": "No border"
+          },
+          {
+            "value": "true tiny",
+            "label": "Tiny"
+          },
+          {
+            "value": "true normal",
+            "label": "Normal"
+          },
+          {
+            "value": "true large",
+            "label": "Large"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_anim_style",
+        "label": "Caption style",
+        "options": [
+          {
+            "value": "one",
+            "label": "Overlay left aligned"
+          },
+          {
+            "value": "three",
+            "label": "Overlay centered aligned"
+          },
+          {
+            "value": "two",
+            "label": "Below image"
+          },
+          {
+            "value": "four",
+            "label": "Below image alternate"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "collections_thumb_style",
+        "label": "Product text",
+        "options": [
+          {
+            "value": "light",
+            "label": "Dark"
+          },
+          {
+            "value": "dark",
+            "label": "Light"
+          }
+        ]
+      },
+      {
+        "type": "color",
+        "id": "collections_thumb_bg",
+        "label": "Product hover",
+        "default": "#ffffff"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_show_secondary",
+        "label": "Show second product image on hover"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,35 @@
+{% capture type_head %} {{ settings.typography_headings | lstrip | rstrip | replace: ' ', '+' | replace: "'", '' }} {% endcapture %}
+{% capture type_menu %} {{ settings.typography_menus | lstrip | rstrip | replace: ' ', '+' | replace: "'", '' }} {% endcapture %}
+{% capture type_body %} {{ settings.typography_body | lstrip | rstrip | replace: ' ', '+' | replace: "'", '' }} {% endcapture %}
+{% capture type_quotes %} {{ settings.typography_quotes | lstrip | rstrip | replace: ' ', '+' | replace: "'", '' }} {% endcapture %}
+{% capture type_label1 %} {{ settings.typography_label1 | lstrip | rstrip | replace: ' ', '+' | replace: "'", '' }} {% endcapture %}
+{% capture type_label2 %} {{ settings.typography_label2 | lstrip | rstrip | replace: ' ', '+' | replace: "'", '' }} {% endcapture %}
+{% capture type_label3 %} {{ settings.typography_label3 | lstrip | rstrip | replace: ' ', '+' | replace: "'", '' }} {% endcapture %}
+
+{% unless type_head contains 'default' %}
+	<link href="//fonts.googleapis.com/css?family={{ type_head | replace: ',+serif', '' | replace: ',+sans-serif', '' | replace: ',+cursive', '' | replace: ' ', '' }}:400,400italic,500,600,700,700italic" rel="stylesheet" type="text/css">
+{% endunless %}
+
+{% unless type_menu contains 'regular' or type_menu == type_head %}
+	<link href="//fonts.googleapis.com/css?family={{ type_menu | replace: ',+serif', '' | replace: ',+sans-serif', '' | replace: ',+cursive', '' | replace: ' ', '' }}:400,700" rel="stylesheet" type="text/css">
+{% endunless %}
+
+{% unless type_body contains 'regular' or type_body == type_head or type_body == type_menu %}
+	<link href="//fonts.googleapis.com/css?family={{ type_body | replace: ',+serif', '' | replace: ',+sans-serif', '' | replace: ',+cursive', '' | replace: ' ', '' }}:400,400italic,500,600,700,700italic" rel="stylesheet" type="text/css">
+{% endunless %}
+
+{% if template contains 'index' %}
+
+	{% unless type_label1 contains 'regular' or type_label1 == type_head or type_label1 == type_menu or type_label1 == type_body %}
+		<link href="//fonts.googleapis.com/css?family={{ type_label1 | replace: ',+serif', '' | replace: ',+sans-serif', '' | replace: ',+cursive', '' | replace: ' ', '' }}:400,400italic,700" rel="stylesheet" type="text/css">
+	{% endunless %}
+
+	{% unless type_label2 contains 'regular' or type_label2 == type_head or type_label2 == type_menu or type_label2 == type_body or type_label1 == type_label2 %}
+		<link href="//fonts.googleapis.com/css?family={{ type_label2 | replace: ',+serif', '' | replace: ',+sans-serif', '' | replace: ',+cursive', '' | replace: ' ', '' }}:400,400italic,700" rel="stylesheet" type="text/css">
+	{% endunless %}
+
+	{% unless type_label3 contains 'regular' or type_label3 == type_head or type_label3 == type_menu or type_label3 == type_body or type_label1 == type_label3 or type_label2 == type_label3  %}
+		<link href="//fonts.googleapis.com/css?family={{ type_label3 | replace: ',+serif', '' | replace: ',+sans-serif', '' | replace: ',+cursive', '' | replace: ' ', '' }}:400,400italic,700" rel="stylesheet" type="text/css">
+	{% endunless %}
+
+{% endif %}

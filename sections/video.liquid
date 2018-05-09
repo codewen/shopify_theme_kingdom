@@ -1,0 +1,74 @@
+<div id="section-{{ section.id }}" class="large-home-section">
+
+  <div id="block-{{ section.id }}" class="large-home-section-content text-light">
+
+    {% unless section.settings.heading == blank %}
+      <h3 class="title">{{ section.settings.heading | escape }}</h3>
+    {% endunless %}
+
+    {% unless section.settings.caption == blank %}
+      <div class="rte">{{ section.settings.caption }}</div>
+    {% endunless %}
+
+    {% unless section.settings.video_url == blank %}
+      <a class="video-lightbox popup-{{ section.settings.video_url.type }}" href="{{ section.settings.video_url }}">
+        <span>{% include 'asset_svg' with 'icon_video_play' %}</span>
+      </a>
+    {% endunless %}
+
+  </div>
+
+  <span class="large-home-section-background">
+
+    {% unless section.settings.bg_img == blank %} 
+     
+      <img
+        src="{{ section.settings.bg_img | img_url: '960x' }}" alt=""
+        srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+        data-srcset="{{ section.settings.bg_img | img_url: '480x' }} 480w, {{ section.settings.bg_img | img_url: '720x' }} 720w, {{ section.settings.bg_img | img_url: '960x' }} 960w, {{ section.settings.bg_img | img_url: '1440x' }} 1440w, {{ section.settings.bg_img | img_url: '1920x' }} 1920w"
+        data-sizes="auto"
+        class="lazyload" />
+      <noscript><span class="ll-fallback" style="background-image:url({{ section.settings.bg_img | img_url: '960x' }})"></span></noscript> 
+
+    {% endunless %}
+
+  </span>
+
+</div>
+
+{% schema %}
+  {
+    "name": "Video",
+    "class": "index-section mount-video",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Video title"
+      },
+      {
+        "type": "text",
+        "id": "caption",
+        "label": "Caption",
+        "default": "Share your brand's story"
+      },
+      {
+        "id": "video_url",
+        "type": "video_url",
+        "label": "Video URL",
+        "accept": ["youtube", "vimeo"],
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc"
+      },
+      {
+        "type": "image_picker",
+        "id": "bg_img",
+        "label": "Background image"
+      }
+    ],
+    "presets": [{
+      "name": "Video",
+      "category": "Video"
+    }]
+  }
+{% endschema %}

@@ -1,0 +1,23 @@
+<div class="card-background" {% if section.settings.img_gift-card %} style="background-image:url({{ section.settings.img_gift-card | img_url: '1467x330' | crop: 'center' }})" {% endif %}>
+
+	<h3 class="card-value{% if gift_card.balance != gift_card.initial_value %} disabled{% endif %}">{{ formatted_initial_value }}</h3>
+
+	{% if gift_card.balance != gift_card.initial_value %}
+	  <h5 class="card-left">{{ gift_card.balance | money }} {{ 'gift_cart.balance_left' | t }}</h5>
+	{% endif %}
+
+</div>
+
+{% schema %}
+	{
+    "name": "Gift card",
+    "class": "gift-card-bg",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "img_gift-card",
+        "label": "Gift card background"
+      }
+    ]
+  }
+{% endschema %}
