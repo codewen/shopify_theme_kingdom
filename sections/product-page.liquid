@@ -74,6 +74,15 @@
 						    </div>
 							{% endfor %}
 
+							 <ul class="product-color-variant">
+							 	<li style="background-color:#B20727"></li>
+							 	<li style="background-color:#FCFBF8"></li>
+							 	<li style="background-color:#F0979A"></li>
+							 	<li style="background-color:#F9B5D3"></li>
+							 	<li style="background-color:#EB613A"></li>
+							 	<li style="background-color:#FFCD61"></li>
+							 </ul>       
+              
 							 <select id="productSelect" name="id" class="styled" style="display: none !important">
 		            {% for variant in product.variants %}
 		              {% if variant.available %}
@@ -233,7 +242,7 @@
 						{% capture prev_url %}{{ collection.previous_product}}{% endcapture %}
 						<span class="btn-prev">
 							{{ left_icon }}
-							{{ '&larr;' | link_to: prev_url }}
+							{{ '←' | link_to: prev_url }}
 						</span>
 					{% endif %}
 
@@ -251,7 +260,7 @@
 						{% capture next_url %}{{ collection.next_product}}{% endcapture %}
 						<span class="btn-next">
 							{{ right_icon }}
-							{{ '&rarr;' | link_to: next_url }}
+							{{ '→' | link_to: next_url }}
 						</span>
 					{% endif %}
 
