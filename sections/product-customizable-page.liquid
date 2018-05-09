@@ -74,7 +74,7 @@
 						    </div>
 							{% endfor %}
 
-							
+   
 							 
               
 							 <select id="productSelect" name="id" class="styled" style="display: none !important">
@@ -90,6 +90,30 @@
 		            {% endfor %}
 		          </select>
 
+							<p class="line-item-property__field">
+								<label>Color</label><br>
+								<input type="checkbox" id="#ffffff" hidden-data="Color" onchange="fillHidden('Color')" value="#ffffff"><label for="#ffffff">#ffffff</label><br>
+								<input type="checkbox" id="#000000" hidden-data="Color" onchange="fillHidden('Color')" value="#000000"><label for="#000000">#000000</label><br>
+								<input type="hidden" id="Color" name="properties[Color]">
+								<script>
+									function fillHidden(hiddenname) {
+									var checkboxes = document.querySelectorAll('[hidden-data="'+hiddenname+'"]');
+									var hiddenfield = document.getElementById(hiddenname);
+									hiddenfield.value = ""
+									var i;
+									for (i = 0; i < checkboxes.length; i++) {
+										var x = checkboxes[i];
+										if(x.checked){
+											if(hiddenfield.value==""){
+												hiddenfield.value = x.value;
+												}else{
+												hiddenfield.value = hiddenfield.value + ", " + x.value; 
+												} 
+											}
+										}
+									}
+								</script>
+							</p>
 
 		          <div class="buttons-holder">
 
