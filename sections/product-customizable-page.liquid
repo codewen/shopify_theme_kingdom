@@ -90,30 +90,43 @@
 		            {% endfor %}
 		          </select>
 
-							<p class="line-item-property__field">
-								<label>Color</label><br>
-								<input type="checkbox" id="#ffffff" hidden-data="Color" onchange="fillHidden('Color')" value="#ffffff"><label for="#ffffff">#ffffff</label><br>
-								<input type="checkbox" id="#000000" hidden-data="Color" onchange="fillHidden('Color')" value="#000000"><label for="#000000">#000000</label><br>
+							
+							<div class="line-item-property-field">
+
+								<span>Choose Color:</span>
+							
+								<div class="dot-wrapper">
+											<input type="checkbox" id="Shiraz" hidden-data="Color" value="Shiraz">
+											<label style="background-color:#B20727" for="Shiraz"></label>
+								</div>
+								<div class="dot-wrapper">
+									<input type="checkbox" id="White" hidden-data="Color" value="White">
+									<label style="background-color:#FCFBF8" for="White"></label>
+								</div>
+								<div class="dot-wrapper">
+									<input type="checkbox" id="Sea Pink" hidden-data="Color" value="Sea Pink">
+									<label style="background-color:#F0979A" for="Sea Pink"></label>
+								</div>
+								<div class="dot-wrapper">
+									<input type="checkbox" id="Lavender" hidden-data="Color" value="Lavender">
+									<label style="background-color:#F9B5D3" for="Lavender"></label>
+								</div>
+								<div class="dot-wrapper">
+									<input type="checkbox" id="Deep Carrot Orange" hidden-data="Color" value="Deep Carrot Orange">
+									<label style="background-color:#EB613A" for="Deep Carrot Orange"></label>
+								</div>
+								<div class="dot-wrapper">
+									<input type="checkbox" id="Golden tainoi" hidden-data="Color" value="Golden tainoi">
+									<label style="background-color:#FFCC61" for="Golden tainoi"></label>
+								</div>
+								
+								<span>Color Selected( Two can be selected): </span>
+
+								<div id="color-selected">
+								</div>
+							
 								<input type="hidden" id="Color" name="properties[Color]">
-								<script>
-									function fillHidden(hiddenname) {
-									var checkboxes = document.querySelectorAll('[hidden-data="'+hiddenname+'"]');
-									var hiddenfield = document.getElementById(hiddenname);
-									hiddenfield.value = ""
-									var i;
-									for (i = 0; i < checkboxes.length; i++) {
-										var x = checkboxes[i];
-										if(x.checked){
-											if(hiddenfield.value==""){
-												hiddenfield.value = x.value;
-												}else{
-												hiddenfield.value = hiddenfield.value + ", " + x.value; 
-												} 
-											}
-										}
-									}
-								</script>
-							</p>
+							</div>
 
 		          <div class="buttons-holder">
 
@@ -310,7 +323,7 @@
     "settings": [
 			{
         "type": "header",
-        "content": "Content"
+        "content": "Contents"
       },
       {
         "type": "checkbox",

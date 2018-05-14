@@ -1389,10 +1389,11 @@
 				}
 
 			},
-
+			
 			initProductForm: function ($product) {
 
 				var firstVariantEver = true;
+				var colorSelected = 0;
 
 				var productSingleObject = JSON.parse($product.find('.product-json')[0].innerHTML),
 					productVariants = productSingleObject.variants;
@@ -1400,6 +1401,55 @@
 				$product.find('form select.product-variants').on('change', (function (e) {
 					this._initProductVariantChange(false, productSingleObject, $product);
 				}).bind(this));
+
+				/* customization code: Find option checkbox and attach change event */
+				/* Start */
+				
+				$product.find('.line-item-property-field input[type=checkbox]').on('change', (function (e) {
+					//example: color
+					var hiddenname = e.currentTarget.getAttribute("hidden-data");
+					var hiddenfield = document.getElementById(hiddenname);
+					var checkboxes = document.querySelectorAll('[hidden-data="' + hiddenname + '"]');
+					var colorName = "";
+					var colorCode = "";
+
+
+					colorSelected = 0;
+					for (var i = 0; i < checkboxes.length; i++) {
+						if (checkboxes[i].checked)
+							colorSelected++;
+					}
+					
+					if (colorSelected > 2) {
+						e.preventDefault();
+						$(e.currentTarget).prop('checked', false)
+						return false;
+					}
+
+
+
+					hiddenfield.value = "";
+					$product.find('#color-selected').empty();
+					for (var i = 0; i < checkboxes.length; i++) {
+						var x = checkboxes[i];
+						if (x.checked) {
+							colorSelected++;
+							colorName = x.getAttribute("value");
+							colorCode = $product.find('label[for=\'' + colorName + '\']').attr("style").split(":")[1];
+							$product.find('#color-selected').append("<div class='dot-wrapper'>"
+								+ "<label style='background-color:" + colorCode + "'></label>"
+								+ "</div>");
+							if (hiddenfield.value == "") {
+								hiddenfield.value = x.value;
+							} else {
+								hiddenfield.value = hiddenfield.value + ", " + x.value;
+							}
+						}
+					}
+				}).bind(this));
+				/* End */
+				/* customization code: Find option checkbox and attach change event */
+
 
 				this._initProductVariantChange(true, productSingleObject, $product);
 
@@ -1436,6 +1486,8 @@
 				if (productSingleObject.variants.length == 1 && productSingleObject.variants[0].title.indexOf('Default') >= 0) {
 					$product.find('.product-variant').hide();
 				}
+
+				
 
 			},
 
