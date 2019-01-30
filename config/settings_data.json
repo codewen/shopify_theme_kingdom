@@ -118,31 +118,31 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "1525410929059": {
+          "1531729012610": {
             "type": "slide",
             "settings": {
-              "hero_slide": "shopify:\/\/shop_images\/IMG_5452.JPG",
+              "hero_slide": "shopify:\/\/shop_images\/IMG_7493.JPG",
               "hero_video": "",
-              "label1": "",
-              "label2": "MOTHER'S DAY GIFT",
+              "label1": "Perfect Gift Choice",
+              "label2": "",
               "label3": "",
-              "button_label": "Shop Now",
-              "button_url": "https:\/\/pastoraleflower.com.au\/products\/2018-deluxe-mothers-day-bouquet",
+              "button_label": "SHOP NOW",
+              "button_url": "https:\/\/pastoraleflower.com.au\/collections\/flower-box",
               "img_style": "dark",
               "labels_pos": "center"
             }
           },
-          "1525411236592": {
+          "1531728825900": {
             "type": "slide",
             "settings": {
-              "hero_slide": "shopify:\/\/shop_images\/P4212927.jpg",
+              "hero_slide": "shopify:\/\/shop_images\/IMG_7503.JPG",
               "hero_video": "",
-              "label1": "",
-              "label2": "DAILY FLOWRS",
-              "label3": "Browse our online shop to find the perfect wrapped flowers to gift or treat yourselves.",
+              "label1": "Designer's Choice",
+              "label2": "Find our signature flower bouquet here",
+              "label3": "",
               "button_label": "SHOP NOW",
-              "button_url": "https:\/\/pastoraleflower.com.au\/collections\/daily-flowers",
-              "img_style": "light",
+              "button_url": "https:\/\/pastoraleflower.com.au\/collections\/designers-choice\/products\/tranquil-love",
+              "img_style": "dark",
               "labels_pos": "left"
             }
           },
@@ -173,13 +173,43 @@
               "img_style": "light",
               "labels_pos": "left"
             }
+          },
+          "1542266181912": {
+            "type": "slide",
+            "settings": {
+              "hero_slide": "shopify:\/\/shop_images\/IMG_1056.JPG",
+              "hero_video": "",
+              "label1": "",
+              "label2": "EVENT DECOR",
+              "label3": "Contact us for your event decoration",
+              "button_label": "",
+              "button_url": "",
+              "img_style": "dark",
+              "labels_pos": "left"
+            }
+          },
+          "1548746625184": {
+            "type": "slide",
+            "settings": {
+              "hero_slide": "shopify:\/\/shop_images\/IMG_0314.jpg",
+              "hero_video": "",
+              "label1": "",
+              "label2": "Valentine",
+              "label3": "",
+              "button_label": "Start your valentine order today!",
+              "button_url": "",
+              "img_style": "dark",
+              "labels_pos": "left"
+            }
           }
         },
         "block_order": [
-          "1525410929059",
-          "1525411236592",
+          "1531729012610",
+          "1531728825900",
           "1484211369679",
-          "1525411435991"
+          "1525411435991",
+          "1542266181912",
+          "1548746625184"
         ],
         "settings": {
           "carousel_transition": "slide",
@@ -230,7 +260,7 @@
           "example-text-block": {
             "type": "text",
             "settings": {
-              "content": "<p>Pastorale Flower is&nbsp;currently a home studio based in Sydney. We specialise in creating stylish arrangements, combining lush colours and fun textures to make every arrangement something memorable.<\/p>\n<p>We like to be the part of your special day. We wish to introduce the beauty of the flowers and deliver your love to the loved ones.<\/p>"
+              "content": "<p>Pastorale Flower is a&nbsp; small family flower&nbsp;business&nbsp;based in Chippendale. We specialise in creating stylish arrangements, combining lush colours and fun textures to make every arrangement something memorable.<\/p>\n<p>We like to be the part of your special day. We wish to introduce the beauty of the flowers and deliver your love to the loved ones.<\/p>\n<p><\/p>\n<p>Also we're excited to have been included in the&nbsp;<span style=\"text-decoration: underline;\"><a href=\"https:\/\/www.flowerdelivery-reviews.com\/10-best-flower-delivery-perth\/\">2018\/2019 list of 10 Best Options for Flower Delivery in Perth<\/a><\/span>&nbsp;! Click&nbsp;on the link to have a look.<\/p>"
             }
           }
         },
@@ -274,7 +304,6 @@
       },
       "1525617704876": {
         "type": "featured-products",
-        "disabled": true,
         "settings": {
           "collections_size": "small",
           "collections_border": "no",
@@ -292,25 +321,18 @@
           "1525747554771-0": {
             "type": "collection",
             "settings": {
-              "home_collections_select": "new"
-            }
-          },
-          "1525747554771-1": {
-            "type": "collection",
-            "settings": {
-              "home_collections_select": "rose"
+              "home_collections_select": "designers-choice"
             }
           },
           "1525747599346": {
             "type": "collection",
             "settings": {
-              "home_collections_select": "wedding-event"
+              "home_collections_select": "flower-box"
             }
           }
         },
         "block_order": [
           "1525747554771-0",
-          "1525747554771-1",
           "1525747599346"
         ],
         "settings": {
@@ -321,12 +343,62 @@
           "collections_thumb_style": "light",
           "collections_thumb_bg": "#ffffff"
         }
+      },
+      "product-customizable-page": {
+        "type": "product-customizable-page",
+        "settings": {
+          "breadcrumb_enabled": false,
+          "product_vendor_enabled": false,
+          "truncated_description": false,
+          "truncated_description_lines_range": 5,
+          "quantity_selector": false,
+          "hide_variants": false,
+          "enable_payment_button": false,
+          "gallery_resizing": "fill",
+          "gallery_featured_image": true,
+          "gallery_transition": "slide",
+          "gallery_autoplay": false,
+          "gallery_timer": 4,
+          "gallery_zoom": false,
+          "gallery_background_color": "#ebebeb"
+        }
+      },
+      "1531741473374": {
+        "type": "collections-list",
+        "disabled": true,
+        "blocks": {
+          "1531741473374-0": {
+            "type": "collection",
+            "settings": {
+              "home_collections_select": ""
+            }
+          },
+          "1531741473374-1": {
+            "type": "collection",
+            "settings": {
+              "home_collections_select": ""
+            }
+          }
+        },
+        "block_order": [
+          "1531741473374-0",
+          "1531741473374-1"
+        ],
+        "settings": {
+          "title": "Collections list",
+          "subtitle": "A list of your most important collections",
+          "collections_border": "no",
+          "collections_anim_style": "one",
+          "collections_thumb_style": "light",
+          "collections_thumb_bg": "#ffffff"
+        }
       }
     },
     "content_for_index": [
       "1484213980467",
       "1525747554771",
-      "1525617704876"
+      "1525617704876",
+      "1531741473374"
     ]
   },
   "presets": {
