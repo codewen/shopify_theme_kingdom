@@ -5,9 +5,34 @@
 		<span class="subtitle">{{ 'cart.general.order_count' | t: count: cart.item_count }}</span>
 	</header>
 
+
+
+
+
 	{% if cart.item_count > 0 %}
 
 		<form id="cart-form" class="clearfix" action="/cart" method="post" novalidate>
+
+		{% comment %} <input data-provide="datepicker" name="attributes[delivery]"> {% endcomment %}
+
+<div style="width:300px; clear:both;">
+  <p>
+    <label for="date">Pick a delivery date: (We only deliver within 20km radius of Sydney CBD)</label>
+    <input id="date" type="text" name="attributes[date]" value="{{ cart.attributes.date }}" required/>
+  </p>
+</div>
+
+<div>
+	<label for="time">Prefered Delivery Time:</label>
+		<select name="attributes[time]">
+			<option value="10:00 - 12:00">10:00 - 12:00</option>
+			<option value="12:00 - 14:00">12:00 - 14:00</option>
+			<option value="14:00 - 16:00">14:00 - 16:00</option>
+			<option value="16:00 - 18:00">16:00 - 18:00</option>
+			<option value="18:00 - 20:00">18:00 - 20:00</option>
+		</select>
+</div>
+
 
 			{% for item in cart.items %}
 
@@ -93,3 +118,4 @@
 	{% endif %}
 
 </div>
+

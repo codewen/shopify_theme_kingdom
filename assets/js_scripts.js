@@ -3,6 +3,28 @@
 (function ($) {
 
 	// We start with the newsletter code (it needs to be wrapped inside a $(window).load() event function in order to get the perfect timeout after the site has completely loaded
+	
+	$(document).ready( function() {
+		$(function() {
+		  $("#date").datepicker( {
+			minDate: +1,
+			maxDate: '+2M'
+		  } );
+		});
+
+		$("[name='checkout']").click(function() {
+			if ($('#date').val() == "" || $('#date').val() === undefined)
+			{
+			  alert("You must pick a delivery date");
+			  return false;
+			} else {
+			  //$(this).submit();
+			  return true;
+			}
+		  });
+		  
+	  });
+
 
 	if ($('#newsletter-box').data('newsletter_check')) {
 
