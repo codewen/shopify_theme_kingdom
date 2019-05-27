@@ -11,14 +11,15 @@
 
 	{% if cart.item_count > 0 %}
 
-		<form id="cart-form" class="clearfix" action="/cart" method="post" novalidate>
+		<form id="cart-form" class="clearfix" action="/cart" method="post" autocomplete="off" novalidate>
 
 		{% comment %} <input data-provide="datepicker" name="attributes[delivery]"> {% endcomment %}
 
 <div style="width:300px; clear:both;">
   <p>
-    <label for="date">Pick a delivery date: (We only deliver within 20km radius of Sydney CBD)</label>
-    <input id="date" type="text" name="attributes[date]" value="{{ cart.attributes.date }}" required/>
+    <label for="date">Pick a delivery date: (We only deliver within 20km radius of Sydney CBD) <br> 
+		</label>
+   	<input id="date" type="text" name="attributes[date]" value="{{ cart.attributes.date }}" required/>
   </p>
 </div>
 

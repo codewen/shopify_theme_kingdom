@@ -6,13 +6,28 @@
 	
 	$(document).ready( function() {
 		$(function() {
-		  $("#date").datepicker( {
-			minDate: +1,
-			maxDate: '+2M'
-		  } );
+
+			var tmr = new Date(new Date().setDate(new Date().getDate()+2)).getTime();
+			console.log(1);
+			
+		  $("#date").datepicker({
+			startDate: new Date(tmr),
+			endDate: '+2M',
+			datesDisabled:[
+				new Date(2019,5,14),
+				new Date(2019,5,15),
+				new Date(2019,5,16),
+				new Date(2019,5,28),
+				new Date(2019,5,29),
+				new Date(2019,5,30),
+				new Date(2019,6,12),
+				new Date(2019,6,13),
+				new Date(2019,6,14),
+			]
+		  });
 		});
 
-		$("[name='checkout']").click(function() {
+		$("[name='checkout'], .zoid-outlet").click(function() {
 			if ($('#date').val() == "" || $('#date').val() === undefined)
 			{
 			  alert("You must pick a delivery date");
